@@ -1,0 +1,32 @@
+﻿6
+0, Villaggio
+		ci sono dei campi coltivati, true, 1
+		si vede la strada principale, true, 2
+		null
+		vedi dei magazzini, false, 3
+1, Campi coltivati
+		vedi un grande lago, true, 5
+		null
+		c'è il villaggio da cui sei partito, true, 0
+		null
+2, Strada Principale
+		null
+		null
+		prosegui per la strada principale, true, 4
+		c'è il villaggio da cui sei partito, true, 0
+3, Magazzini
+		null
+		c'è il villaggio da cui sei partito, true, 0
+		null
+		null
+4, IIo miglio strada principale, 1
+Open:0-3
+		torni indietro, true, 2
+		null
+		null
+		null
+5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.
+		null
+		null
+		vedi i campi coltivati, true, 1
+		null

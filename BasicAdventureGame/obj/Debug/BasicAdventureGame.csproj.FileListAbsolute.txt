@@ -1,0 +1,120 @@
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+Z:\Esercizi info\15-11-30\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+Z:\Esercizi info\15-12-14\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+Z:\Esercizi info\15-12-14\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+Z:\Esercizi info\15-12-14\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+Z:\Informatica\2015-12-14_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+Z:\Informatica\2015-12-18_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\MappeGioco\Mappa1.txt
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+Z:\Informatica\2016-01-22_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\MappeGioco\Mappa1.txt
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+C:\Users\giacomo.aloisi\Desktop\2016-01-25_AloisiGiacomo\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe.config
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.exe
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.pdb
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\Help\Help.html
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\MappeGioco\Mappa1.txt
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.dll
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\System.Net.Http.xml
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csprojResolveAssemblyReference.cache
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.g.cs
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\App.g.cs
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_Content.g.cs
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.cache
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame_MarkupCompile.lref
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\MainWindow.baml
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources
+C:\Users\GiackAloZ\Desktop\Progetto Adventure Game\Ex0002_BasicAdventureGame_MappaVS2013xStudenti\BasicAdventureGame\obj\Debug\BasicAdventureGame.csproj.GenerateResource.Cache
