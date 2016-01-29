@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BasicAdventureGame.Ambiente">
+    <Position X="3.25" Y="0.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ambiente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Passaggi" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Azione">
+    <Position X="8" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>Azione.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.ApriPassaggio">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAEEAAA=</HashCode>
+      <FileName>ApriPassaggio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.GestoreMappa">
+    <Position X="0.5" Y="3.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAIAAAAAAAAAAAAAAACAAAAAEAAAAAAAA=</HashCode>
+      <FileName>GestoreMappa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Mappa" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Passaggio">
+    <Position X="6.25" Y="3.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Passaggio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BasicAdventureGame.Direzioni">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAACAAAQAAAAAAAIAAAQ=</HashCode>
+      <FileName>Direzioni.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

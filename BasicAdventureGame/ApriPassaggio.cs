@@ -52,7 +52,7 @@ namespace BasicAdventureGame
 		{
 			for(int i = 0; i < 4; i++)
 			{
-				if (m.Mappa[IndiceAmbientePartenza].Passaggi[i] != null && m.Mappa[IndiceAmbientePartenza].Passaggi[i].IndiceAmbienteDestinazione == IndiceAmbienteArrivo)
+				if (m.Mappa[IndiceAmbientePartenza].Passaggi[i] != null && m.Mappa[IndiceAmbientePartenza].Passaggi[i].IndiceAmbienteDestinazione == IndiceAmbienteArrivo && m.Mappa[IndiceAmbientePartenza].Passaggi[i].Aperto != true)
 				{
 					m.Mappa[IndiceAmbientePartenza].Passaggi[i].Aperto = true;
 					return "Hai aperto il passaggio da " + m.Mappa[IndiceAmbientePartenza].Descrizione + " a " + m.Mappa[IndiceAmbienteArrivo].Descrizione + "\n";
