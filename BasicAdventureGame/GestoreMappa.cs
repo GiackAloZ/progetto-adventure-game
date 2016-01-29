@@ -91,16 +91,15 @@ namespace BasicAdventureGame
 					else
 						_pulsantiSpostamento[i].IsEnabled = false;
 				}
-				return s;
+				return s + "\n";
 			}
 
 			//Per tutti gli altri comandi che non sono Direzione.Avvio viene eseguita questa parte di codice
 
-            
-
 			IndiceStanza = Mappa[IndiceStanza].Passaggi[(int)comando].IndiceAmbienteDestinazione;	//Trova l'indice della stanza di arrivo
 			string st = "Sei andato in " + Mappa[IndiceStanza].Descrizione + ".\n";					//Comincia a riempire la stringa st che conterrà tutte le informazioni sullo spostamento
 
+			//Controllo delle eventuali azioni da applicare
             for (int i = 0; i < Mappa.Length; i++)
             {
                 if(Mappa[i].Azioni != null)
@@ -149,7 +148,7 @@ namespace BasicAdventureGame
 				else
 					_pulsantiSpostamento[i].IsEnabled = false;
 			}
-			return st;
+			return st + "\n";
 			
 		}
 
@@ -163,16 +162,25 @@ namespace BasicAdventureGame
 			{
 				using (StreamReader sr = new StreamReader(percorsoFile))
 				{
+					//Lettura numero degli ambienti
 					int n = int.Parse(sr.ReadLine());
 					Mappa = new Ambiente[n];
-					int count = 0;
+					int count = 0;						//Variabile per il conteggio dell'ambiente
+
+					//Lettura file completo
 					while (sr.Peek() != -1)
 					{
+						//Creazione ambiente
 						Mappa[count] = new Ambiente("", null, null, null, null);
 						string[] st = sr.ReadLine().Split(',');
+
+						//Aggiunta della descrizione dell'ambiente
 						Mappa[count].Descrizione = st[1].Trim().Replace("\\n", "\n");
+
+						//Controlla se sono presenti azione nell'ambiente
 						if (st.Length > 2)
 						{
+							//Se sono presenti, le crea e le inserisce nel vettore Azioni della classe Ambiente
 							int nAzioni = int.Parse(st[2]);
                             Mappa[int.Parse(st[0].Trim())].Azioni = new Azione[nAzioni];
                             for (int i = 0; i < nAzioni; i++)
@@ -193,6 +201,8 @@ namespace BasicAdventureGame
                                 }
 							}
 						}
+
+						//Creazione passaggi
 						for (int i = 0; i < 4; i++)
 						{
 							string s = sr.ReadLine().Trim();
@@ -207,7 +217,6 @@ namespace BasicAdventureGame
 						count++;
 					}
 				}
-
 			}
 			catch (IOException ex)
 			{

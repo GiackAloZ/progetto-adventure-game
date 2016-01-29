@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BasicAdventureGame"
         mc:Ignorable="d"
-        Title="Avventura grafica di base - Progetto di avvio" Height="754" Width="1022.834" 
+        Title="Avventura grafica di base - Progetto di avvio" Height="682" Width="1022.834" 
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.InputBindings>
         <!--Definisce la combinazione di tasti di scelta rapida, non essendo predefiniti come per gli altri comandi, 
@@ -22,14 +22,15 @@
         <CommandBinding Command="ApplicationCommands.SaveAs" Executed="SaveAs_Executed" />
         <CommandBinding Command="ApplicationCommands.Help" Executed="Help_Executed" />
     </Window.CommandBindings>
-    <Grid>
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="409" />
-            <RowDefinition Height="86" />
-            <RowDefinition />
+            <RowDefinition Height="702" />
         </Grid.RowDefinitions>
-        
+
         <!--Menu: il trattino basso specifica la successiva lettera come attiva (e sottolineata) per selezionare il comando
             (insieme al tasto Alt per il menu principale).-->
         <Menu Background="LightGray" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="0" Height="18">
@@ -43,21 +44,11 @@
             </MenuItem>
             <MenuItem Header="_Aiuto" Command="Help" />
         </Menu>
-        <StackPanel HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Orientation="Horizontal" Grid.Row="1">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,293" VerticalAlignment="Stretch" Orientation="Horizontal" Grid.Row="1">
             <!--Finestra grafica sul mondo virtuale.-->
-            <GroupBox x:Name="grpStanza" Header="Stanza" HorizontalAlignment="Left" Margin="5,5,5,0" VerticalAlignment="Top" 
-                      Height="403" BorderBrush="#FF0A9CF3">
-                <Canvas Name="cnvVista" Margin="1" Width="727" Height="381" >
-                    <!--<Canvas.Background>-->
-                        <!--<ImageBrush ImageSource="Immagini/Carrier-Hangar.jpg" Stretch="Uniform"/>-->
-                    <!--</Canvas.Background>-->
-                    <!--<Image x:Name="imgAvatar" Height="215" Canvas.Left="32" Canvas.Top="170" Width="150" Source="Immagini/TGSith.png"/>-->
-                    <!--<Image x:Name="imgAttore" Height="249" Canvas.Left="247" Canvas.Top="134" Width="480" Source="Immagini/DarthVader.png"/>-->
-                </Canvas>
-            </GroupBox>
-            
+
             <!--Statistiche del personaggio controllato dall'utente.-->
-            <GroupBox x:Name="grpStatistiche" Header="Statistiche: Darth Toni" HorizontalAlignment="Stretch" Margin="5,5,5,1" 
+            <GroupBox x:Name="grpStatistiche" Header="Statistiche:" HorizontalAlignment="Stretch" Margin="5,5,5,1" 
                       VerticalAlignment="Stretch" Width="242" BorderBrush="#FF0A9CF3">
                 <Canvas Margin="0">
                     <Label Content="Salute" Canvas.Left="10" Canvas.Top="18" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
@@ -127,18 +118,17 @@
                             Width="142"/>
                 </Canvas>
             </GroupBox>
+            <GroupBox x:Name="grpLog" Header="Log" HorizontalAlignment="Stretch" Margin="5,5,5,1" 
+                      VerticalAlignment="Stretch" BorderBrush="#FF0A9CF3" Width="751">
+                <TextBox x:Name="txtEsito" Margin="0,0,-2,1" Text="Sei entrato nell'hangar principale della Morte Nera.&#xA;Sono presenti: R2D2, Han Solo e Darth Vader.&#xA;In fondo vedi una nave pronta al decollo." TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" 
+            		VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" />
+            </GroupBox>
         </StackPanel>
-        
+
         <!--Output testuale del programma.-->
-        <StackPanel HorizontalAlignment="Stretch" Margin="5,1,5,0" VerticalAlignment="Stretch" Grid.Row="2" Orientation="Vertical">
-            <Label Content="Esito: " Margin="5,1,5,2" Padding="0,5,5,5" />
-            <!--<TextBlock x:Name="txtEsito" TextWrapping="Wrap" Margin="5,0,5,5" Text="TextBlock" Height="49" />-->
-            <TextBox Name="txtEsito" Margin="5,0,5,5" Text="Sei entrato nell'hangar principale della Morte Nera.&#xD;&#xA;Sono presenti: R2D2, Han Solo e Darth Vader.&#xD;&#xA;In fondo vedi una nave pronta al decollo." TextWrapping="Wrap" AcceptsReturn="True" Height="49" IsReadOnly="True" 
-                     VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" />
-        </StackPanel>
-        
+
         <!--Comandi raggrupati per genere tramite l'uso di GroupBox.-->
-        <StackPanel HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" Grid.Row="3" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,419,10,86" VerticalAlignment="Stretch" Grid.Row="1" Orientation="Horizontal">
             <GroupBox x:Name="grpSpostamenti" Header="Spostamento" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch"
                       Width="137" BorderBrush="#FF0A9CF3">
                 <Canvas>

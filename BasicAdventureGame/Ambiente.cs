@@ -20,6 +20,9 @@ namespace BasicAdventureGame
 		/// </summary>
 		public Passaggio[] Passaggi { get; set; }
 
+		/// <summary>
+		/// Vettore di Azioni che contiene tutte le azione dell'Ambiente
+		/// </summary>
         public Azione[] Azioni { get; set; }
 
         /// <summary>
