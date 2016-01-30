@@ -9,7 +9,8 @@
 		null
 		c'è il villaggio da cui sei partito, true, 0
 		null
-2, Strada Principale
+2, Strada Principale, 1
+Persona:Vecchio,Vedi un anziano signore vestito di nero seduto sulla strada principale.,60,null
 		null
 		null
 		prosegui per la strada principale, true, 4

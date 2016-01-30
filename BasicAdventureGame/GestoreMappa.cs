@@ -21,6 +21,8 @@ namespace BasicAdventureGame
 	/// </summary>
 	class GestoreMappa
 	{
+        private Dialogo[] _dialoghi;
+
 		/// <summary>
 		/// Attributo vettore di Button che identifica i bottoni che gestiranno i movimenti nella mappa
 		/// </summary>
@@ -117,6 +119,17 @@ namespace BasicAdventureGame
                 }
             }
             
+            //Controllo delle eventuali entità presenti nell'Ambiente di arrivo
+            if(Mappa[IndiceStanza].Cose != null)
+            {
+                foreach (Entità ent in Mappa[IndiceStanza].Cose)
+                {
+                    if (ent.GetType() == typeof(Persona))
+                    {
+                        st += ent.Descrizione + "\n";
+                    }
+                }
+            }
 
             //Ciclo per finire il riempimento della stringa st con informazioni riguardanti gli ambienti visibili
             //Inoltre permette di disabilitare i pulsanti qualora mancassi il passaggio o fosse chiuso
@@ -183,6 +196,7 @@ namespace BasicAdventureGame
 							//Se sono presenti, le crea e le inserisce nel vettore Azioni della classe Ambiente
 							int nAzioni = int.Parse(st[2]);
                             Mappa[int.Parse(st[0].Trim())].Azioni = new Azione[nAzioni];
+                            Mappa[int.Parse(st[0].Trim())].Cose = new List<Entità>();
                             for (int i = 0; i < nAzioni; i++)
 							{
 								string[] act = sr.ReadLine().Split(':');
@@ -195,6 +209,22 @@ namespace BasicAdventureGame
                                         string indicePartenza = effettoAzione.Split('-')[0];
                                         string indiceArrivo = effettoAzione.Split('-')[1];
                                         Mappa[int.Parse(st[0].Trim())].Azioni[i] = new ApriPassaggio(int.Parse(indicePartenza), int.Parse(indiceArrivo));
+                                        break;
+                                    case "Persona":
+                                        List<string[]> dial = new List<string[]>();
+                                        string[] infos = effettoAzione.Split(',');
+                                        string nome = infos[0];
+                                        string descrizione = infos[1];
+                                        int vita = int.Parse(infos[2]);
+                                        if(infos[3] != "null")
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            dial = null;
+                                        }
+                                        Mappa[int.Parse(st[0].Trim())].Cose.Add(new Persona(nome, descrizione, vita, dial));
                                         break;
                                     default:
                                         throw new NotImplementedException();   

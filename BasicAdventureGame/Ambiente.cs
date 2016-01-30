@@ -25,6 +25,8 @@ namespace BasicAdventureGame
 		/// </summary>
         public Azione[] Azioni { get; set; }
 
+        public List<Entità> Cose { get; set; }
+
         /// <summary>
         /// Il costruttore della classe Ambiente
         /// </summary>

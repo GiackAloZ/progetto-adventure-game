@@ -5,9 +5,12 @@ using System.Text;
 
 namespace BasicAdventureGame
 {
-    class Dialogo
+    class Oggetto : Entità
     {
-        public List<Scelta> Scelte { get; set; }
+        public override string Descrizione { get; set; }
+
+        public override string Nome { get; set; }
+
 
 
     }

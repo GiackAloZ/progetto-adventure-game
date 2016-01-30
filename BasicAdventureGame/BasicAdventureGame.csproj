@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Scelta.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,7 +69,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ApriPassaggio.cs" />
+    <Compile Include="Dialogo.cs" />
     <Compile Include="Direzioni.cs" />
+    <Compile Include="EssereVivente.cs" />
     <Compile Include="GestoreMappa.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -76,7 +79,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Oggetto.cs" />
     <Compile Include="Passaggio.cs" />
+    <Compile Include="Entità.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -106,6 +111,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Dialoghi\Dialoghi.txt" />
     <Content Include="Help\Help.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

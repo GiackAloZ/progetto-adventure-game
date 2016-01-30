@@ -5,19 +5,18 @@ using System.Text;
 
 namespace BasicAdventureGame
 {
-	class Scelta
-	{
-		public string[] Descrizioni { get; set; }
+    class Scelta
+    {
+        public string Risposta { get; set; }
 
-		public int[] Destinazioni { get; set; }
+        public Tuple<string[], int> Opzioni { get; set; }
 
-		public bool[] IsAvailable { get; set; }
+        public Scelta() { }
 
-		public Scelta(string[] desc, int[] dest, bool[] av)
-		{
-			Descrizioni = desc;
-			Destinazioni = dest;
-			IsAvailable = av;
-		}
-	}
+        public Scelta(string r, Tuple<string[], int> opz)
+        {
+            Risposta = r;
+            Opzioni = opz;
+        }
+    }
 }

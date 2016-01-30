@@ -5,8 +5,18 @@ using System.Text;
 
 namespace BasicAdventureGame
 {
-	abstract class Entità
-	{
-		abstract public string Nome { get; set; }
-	}
+    class Persona : EssereVivente
+    {
+        public List<string[]> Dialogo { get; set; }
+
+        public Persona() { }
+
+        public Persona(string n, string d, int v, List<string[]> dial)
+        {
+            Nome = n;
+            Descrizione = d;
+            Vita = v;
+            Dialogo = dial;
+        }
+    }
 }
