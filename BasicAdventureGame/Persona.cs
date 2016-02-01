@@ -7,16 +7,16 @@ namespace BasicAdventureGame
 {
     class Persona : EssereVivente
     {
-        public List<string[]> Dialogo { get; set; }
+        public Dialogo Dial { get; set; }
 
         public Persona() { }
 
-        public Persona(string n, string d, int v, List<string[]> dial)
+        public Persona(string n, string d, int v, Dialogo dial)
         {
             Nome = n;
             Descrizione = d;
             Vita = v;
-            Dialogo = dial;
+            Dial = dial;
         }
     }
 }

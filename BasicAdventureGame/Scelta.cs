@@ -9,11 +9,11 @@ namespace BasicAdventureGame
     {
         public string Risposta { get; set; }
 
-        public Tuple<string[], int> Opzioni { get; set; }
+        public List<Tuple<string, int>> Opzioni { get; set; }
 
         public Scelta() { }
 
-        public Scelta(string r, Tuple<string[], int> opz)
+        public Scelta(string r, List<Tuple<string, int>> opz)
         {
             Risposta = r;
             Opzioni = opz;

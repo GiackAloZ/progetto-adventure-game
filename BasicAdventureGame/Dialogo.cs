@@ -9,6 +9,11 @@ namespace BasicAdventureGame
     {
         public List<Scelta> Scelte { get; set; }
 
+		public Dialogo() { }
 
+		public Dialogo(List<Scelta> sc)
+		{
+			Scelte = sc;
+		}
     }
 }

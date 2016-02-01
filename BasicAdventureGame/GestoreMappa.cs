@@ -190,7 +190,7 @@ namespace BasicAdventureGame
 						//Aggiunta della descrizione dell'ambiente
 						Mappa[count].Descrizione = st[1].Trim().Replace("\\n", "\n");
 
-						//Controlla se sono presenti azione nell'ambiente
+						//Controlla se sono presenti azioni nell'ambiente
 						if (st.Length > 2)
 						{
 							//Se sono presenti, le crea e le inserisce nel vettore Azioni della classe Ambiente
@@ -211,7 +211,7 @@ namespace BasicAdventureGame
                                         Mappa[int.Parse(st[0].Trim())].Azioni[i] = new ApriPassaggio(int.Parse(indicePartenza), int.Parse(indiceArrivo));
                                         break;
                                     case "Persona":
-                                        List<string[]> dial = new List<string[]>();
+                                        Dialogo dial = new Dialogo();
                                         string[] infos = effettoAzione.Split(',');
                                         string nome = infos[0];
                                         string descrizione = infos[1];
@@ -246,6 +246,25 @@ namespace BasicAdventureGame
 						}
 						count++;
 					}
+				}
+			}
+			catch (IOException ex)
+			{
+				MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Eccezione non gestita : " + ex.Message);
+			}
+		}
+
+		public void CaricaDialogo(int n)
+		{
+			try
+			{
+				using (StreamReader sr = new StreamReader("Dialoghi\\Dialoghi.txt"))
+				{
+
 				}
 			}
 			catch (IOException ex)
