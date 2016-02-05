@@ -11,7 +11,7 @@ namespace BasicAdventureGame
 
 		public Dialogo() { }
 
-		public Dialogo(List<Scelta> sc)
+		public Dialogo(string en, List<Scelta> sc)
 		{
 			Scelte = sc;
 		}

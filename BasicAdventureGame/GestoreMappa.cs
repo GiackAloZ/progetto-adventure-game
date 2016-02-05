@@ -21,12 +21,20 @@ namespace BasicAdventureGame
 	/// </summary>
 	class GestoreMappa
 	{
-        private Dialogo[] _dialoghi;
-
 		/// <summary>
 		/// Attributo vettore di Button che identifica i bottoni che gestiranno i movimenti nella mappa
 		/// </summary>
 		private Button[] _pulsantiSpostamento;
+
+        private ComboBox _interlocutore;
+
+        private ComboBox _frase;
+
+        private Button _parla;
+
+        private int _profonditàScelta = 0;
+
+        private string _interlocutoreAttuale = "";
 
 		/// <summary>
 		/// Proprietà intera che descrive in quale "Stanza" (Ambiente) ci si trova
@@ -43,13 +51,17 @@ namespace BasicAdventureGame
 		/// </summary>
 		/// <param name="m">Vettore di Ambiente</param>
 		/// <param name="cs">Vettore di Button</param>
-		public GestoreMappa(Ambiente[] m, Button[] cs, Azione[] az)
+		public GestoreMappa(Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p)
 		{
 			if (m != null)
 				Mappa = (Ambiente[])m.Clone();
 			else
 				Mappa = null;
 			_pulsantiSpostamento = (Button[])cs.Clone();
+
+            _interlocutore = i;
+            _frase = f;
+            _parla = p;
 		}
 
 		/// <summary>
@@ -122,14 +134,35 @@ namespace BasicAdventureGame
             //Controllo delle eventuali entità presenti nell'Ambiente di arrivo
             if(Mappa[IndiceStanza].Cose != null)
             {
+                bool checkDialogs = false;
                 foreach (Entità ent in Mappa[IndiceStanza].Cose)
                 {
                     if (ent.GetType() == typeof(Persona))
                     {
-                        st += ent.Descrizione + "\n";
+                        Persona p = (Persona)ent;
+                        st += p.Descrizione + "\n";
+                        if (p.Dial != null)
+                        {
+                            _interlocutore.Items.Clear();
+                            _frase.Items.Clear();
+                            _interlocutore.Items.Add(p.Nome);
+                            for (int i = 0; i < p.Dial.Scelte[_profonditàScelta].Opzioni.Count; i++)
+                            {
+                                _frase.Items.Add(p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item1);
+                            }
+                            checkDialogs = true;
+                        }
                     }
                 }
+                _parla.IsEnabled = checkDialogs;
             }
+            else
+            {
+                _parla.IsEnabled = false;
+            }
+
+            _interlocutoreAttuale = "";
+            _profonditàScelta = 0;
 
             //Ciclo per finire il riempimento della stringa st con informazioni riguardanti gli ambienti visibili
             //Inoltre permette di disabilitare i pulsanti qualora mancassi il passaggio o fosse chiuso
@@ -218,7 +251,37 @@ namespace BasicAdventureGame
                                         int vita = int.Parse(infos[2]);
                                         if(infos[3] != "null")
                                         {
-
+                                            try
+                                            {
+                                                using (StreamReader sr2 = new StreamReader("Dialoghi\\Dialoghi.txt"))
+                                                {
+                                                    int nDialogs = int.Parse(sr2.ReadLine());
+                                                    for (int j = 0; j < nDialogs; j++)
+                                                    {
+                                                        string[] inf = sr2.ReadLine().Split(',');
+                                                        if (infos[3] == inf[0])
+                                                        {
+                                                            dial.Scelte = new List<Scelta>();
+                                                            for (int k = 0; k < int.Parse(inf[2]); k++)
+                                                            {
+                                                                string[] dialogo = sr2.ReadLine().Split(';');
+                                                                List<Tuple<string,int>> scelte = new List<Tuple<string,int>>();
+                                                                for(int l = 1; l < dialogo.Length; l++)
+                                                                    scelte.Add(new Tuple<string,int>(dialogo[l].Split(':')[0], dialogo[l].Split(':').Length > 1 ? int.Parse(dialogo[l].Split(':')[1]) : -1));
+                                                                dial.Scelte.Add(new Scelta(dialogo[0], scelte));
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            catch (IOException ex)
+                                            {
+                                                MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                MessageBox.Show("Eccezione non gestita : " + ex.Message);
+                                            }
                                         }
                                         else
                                         {
@@ -258,23 +321,37 @@ namespace BasicAdventureGame
 			}
 		}
 
-		public void CaricaDialogo(int n)
-		{
-			try
-			{
-				using (StreamReader sr = new StreamReader("Dialoghi\\Dialoghi.txt"))
-				{
-
-				}
-			}
-			catch (IOException ex)
-			{
-				MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Eccezione non gestita : " + ex.Message);
-			}
-		}
+        public string Parla()
+        {
+            string nome = (string)_interlocutore.SelectedItem;
+            if (_interlocutoreAttuale == "" || _interlocutoreAttuale == nome)
+            {
+                _interlocutoreAttuale = nome;
+                string opzione = (string)_frase.SelectedItem;
+                string risposta = "";
+                foreach (Entità ent in Mappa[IndiceStanza].Cose)
+                {
+                    if (ent.Nome == nome && ent.GetType() == typeof(Persona))
+                    {
+                        Persona p = (Persona)ent;
+                        int opz = 0;
+                        for (int i = 0; i < p.Dial.Scelte[_profonditàScelta].Opzioni.Count; i++)
+                        {
+                            if (p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item1 == opzione)
+                            {
+                                opz = p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2;
+                                break;
+                            }
+                        }
+                        risposta = p.Dial.Scelte[opz].Entrata;
+                        _profonditàScelta += opz;
+                        return risposta;
+                    }
+                }
+                return "";
+            }
+            else
+                return "Stavi parlando con " + nome + "!";
+        }
 	}
 }

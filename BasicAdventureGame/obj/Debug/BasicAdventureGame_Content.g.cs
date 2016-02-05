@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dialoghi/dialoghi.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("help/help.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mappegioco/mappa1.txt")]
 

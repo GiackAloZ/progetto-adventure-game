@@ -7,15 +7,15 @@ namespace BasicAdventureGame
 {
     class Scelta
     {
-        public string Risposta { get; set; }
+        public string Entrata { get; set; }
 
         public List<Tuple<string, int>> Opzioni { get; set; }
 
         public Scelta() { }
 
-        public Scelta(string r, List<Tuple<string, int>> opz)
+        public Scelta(string en, List<Tuple<string, int>> opz)
         {
-            Risposta = r;
+            Entrata = en;
             Opzioni = opz;
         }
     }
