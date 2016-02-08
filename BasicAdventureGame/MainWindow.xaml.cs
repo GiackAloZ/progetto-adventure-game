@@ -308,5 +308,10 @@ namespace BasicAdventureGame
             txtEsito.Focus();
             txtEsito.CaretIndex = txtEsito.Text.Length;
         }
+
+		private void cmbInterlocutore_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			mappaPrincipale.CaricaOpzioni((string)cmbInterlocutore.SelectedItem);
+		}
     }
 }

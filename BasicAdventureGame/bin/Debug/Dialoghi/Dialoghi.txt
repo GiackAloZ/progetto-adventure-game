@@ -1,4 +1,12 @@
-﻿1
+﻿2
 0, Vecchio, 2
 Sono molto indaffarato nella mia meditazione. Passa oltre!;Non so dove mi trovo aiutami!:1;Ok, ok come vuoi
-Mi dispiace ma non so come aiutarti ragazzo.
+Mi dispiace ma non so come aiutarti ragazzo.;Ma dai potrai darmi una mano in qualche modo!
+1, Giardiniere, 6
+Ehlià! Chi sei?;Un viaggiatore disperso:1;Un ricercatore:2;Un minatore:3
+Ah si? E cosa ti ha portato a viaggiare i questo posto desolato?;La gente:4;La natura:5
+Interessante... E di cosa ti occupi?;Biologia:5;Fisica:6
+Sei nel posto giusto! La gente ha proprio bisogno di alcuni lavoratori alla miniera di carbone...
+Bhe non è che siamo così gentili in realtà...
+Sei un vero amante della natura vedo! Come me...
+La gente come te non la capisco...

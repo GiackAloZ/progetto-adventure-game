@@ -137,7 +137,7 @@ namespace BasicAdventureGame
                 bool checkDialogs = false;
                 foreach (Entità ent in Mappa[IndiceStanza].Cose)
                 {
-                    if (ent.GetType() == typeof(Persona))
+                    if (ent is Persona)
                     {
                         Persona p = (Persona)ent;
                         st += p.Descrizione + "\n";
@@ -146,10 +146,6 @@ namespace BasicAdventureGame
                             _interlocutore.Items.Clear();
                             _frase.Items.Clear();
                             _interlocutore.Items.Add(p.Nome);
-                            for (int i = 0; i < p.Dial.Scelte[_profonditàScelta].Opzioni.Count; i++)
-                            {
-                                _frase.Items.Add(p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item1);
-                            }
                             checkDialogs = true;
                         }
                     }
@@ -323,15 +319,17 @@ namespace BasicAdventureGame
 
         public string Parla()
         {
+			int lastProfondità = _profonditàScelta;
             string nome = (string)_interlocutore.SelectedItem;
             if (_interlocutoreAttuale == "" || _interlocutoreAttuale == nome)
             {
                 _interlocutoreAttuale = nome;
                 string opzione = (string)_frase.SelectedItem;
                 string risposta = "";
+				bool check = false;
                 foreach (Entità ent in Mappa[IndiceStanza].Cose)
                 {
-                    if (ent.Nome == nome && ent.GetType() == typeof(Persona))
+                    if (ent.Nome == nome && ent is Persona)
                     {
                         Persona p = (Persona)ent;
                         int opz = 0;
@@ -339,13 +337,31 @@ namespace BasicAdventureGame
                         {
                             if (p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item1 == opzione)
                             {
-                                opz = p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2;
+								if (p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2 >= 1)
+								{
+									opz = p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2;
+									check = true;
+								}
                                 break;
                             }
                         }
-                        risposta = p.Dial.Scelte[opz].Entrata;
-                        _profonditàScelta += opz;
-                        return risposta;
+						if (check)
+						{
+							risposta = p.Dial.Scelte[opz].Entrata;
+							_profonditàScelta = opz;
+							risposta = "Tu: " + opzione + "\n" + nome + ": " + risposta + "\n";
+						}
+						else
+						{
+							risposta = "Tu: " + opzione + "\n" + "Ma non risponde...\n";
+						}
+
+						if (_profonditàScelta != lastProfondità)
+						{
+							CaricaOpzioni(nome);
+						}
+
+						return risposta;
                     }
                 }
                 return "";
@@ -353,5 +369,21 @@ namespace BasicAdventureGame
             else
                 return "Stavi parlando con " + nome + "!";
         }
+
+		public void CaricaOpzioni(string n)
+		{
+			foreach (Entità ent in Mappa[IndiceStanza].Cose)
+			{
+				_frase.Items.Clear();
+				if (ent.Nome == n && ent is Persona)
+				{
+					Persona p = (Persona)ent;
+					foreach (Tuple<string, int> t in p.Dial.Scelte[_profonditàScelta].Opzioni)
+					{
+						_frase.Items.Add(t.Item1);
+					}
+				}
+			}
+		}
 	}
 }

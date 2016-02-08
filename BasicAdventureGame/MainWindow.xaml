@@ -162,7 +162,7 @@
                       Width="218" BorderBrush="#FF0A9CF3">
                 <Canvas>
                     <Label Content="Interlocutore:" Canvas.Left="4" Canvas.Top="1" Padding="0,5,5,5"/>
-                    <ComboBox x:Name="cmbInterlocutore" Canvas.Left="4" Canvas.Top="27" Width="198"/>
+                    <ComboBox x:Name="cmbInterlocutore" Canvas.Left="4" Canvas.Top="27" Width="198" SelectionChanged="cmbInterlocutore_SelectionChanged"/>
                     <Label Content="Frase:" Canvas.Left="4" Canvas.Top="50" Padding="0,5,5,5"/>
                     <ComboBox x:Name="cmbFrase" Canvas.Left="4" Canvas.Top="76" Width="198"/>
                     <Button x:Name="btnParla" Content="Parla" Canvas.Left="54" Canvas.Top="123" Width="98" Click="btnParla_Click"/>
