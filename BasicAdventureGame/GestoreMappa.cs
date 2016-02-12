@@ -32,7 +32,7 @@ namespace BasicAdventureGame
 
         private Button _parla;
 
-        private int _profonditàScelta = 0;
+        private int _profonditàScelta;
 
         private string _interlocutoreAttuale = "";
 
@@ -62,6 +62,7 @@ namespace BasicAdventureGame
             _interlocutore = i;
             _frase = f;
             _parla = p;
+			_profonditàScelta = -1;
 		}
 
 		/// <summary>
@@ -154,11 +155,13 @@ namespace BasicAdventureGame
             }
             else
             {
+				_interlocutore.Items.Clear();
+				_frase.Items.Clear();
                 _parla.IsEnabled = false;
             }
 
             _interlocutoreAttuale = "";
-            _profonditàScelta = 0;
+            _profonditàScelta = -1;
 
             //Ciclo per finire il riempimento della stringa st con informazioni riguardanti gli ambienti visibili
             //Inoltre permette di disabilitare i pulsanti qualora mancassi il passaggio o fosse chiuso
@@ -251,21 +254,33 @@ namespace BasicAdventureGame
                                             {
                                                 using (StreamReader sr2 = new StreamReader("Dialoghi\\Dialoghi.txt"))
                                                 {
-                                                    int nDialogs = int.Parse(sr2.ReadLine());
-                                                    for (int j = 0; j < nDialogs; j++)
+													string[] ss = sr2.ReadLine().Split(',');
+													string nomeAttuale;
+													if (ss.Length > 1)
+														nomeAttuale = ss[1].Trim();
+													else
+														nomeAttuale = "";
+													bool arrivato = nomeAttuale == nome;
+													while (!arrivato)
+													{
+														ss = sr2.ReadLine().Split(',');
+														if (ss.Length > 1)
+															nomeAttuale = ss[1].Trim();
+														else
+															nomeAttuale = "";
+														arrivato = nomeAttuale == nome;
+													}
+                                                    string[] inf = ss;
+                                                    if (infos[3] == inf[0])
                                                     {
-                                                        string[] inf = sr2.ReadLine().Split(',');
-                                                        if (infos[3] == inf[0])
+                                                        dial.Scelte = new List<Scelta>();
+                                                        for (int k = 0; k < int.Parse(inf[2]); k++)
                                                         {
-                                                            dial.Scelte = new List<Scelta>();
-                                                            for (int k = 0; k < int.Parse(inf[2]); k++)
-                                                            {
-                                                                string[] dialogo = sr2.ReadLine().Split(';');
-                                                                List<Tuple<string,int>> scelte = new List<Tuple<string,int>>();
-                                                                for(int l = 1; l < dialogo.Length; l++)
-                                                                    scelte.Add(new Tuple<string,int>(dialogo[l].Split(':')[0], dialogo[l].Split(':').Length > 1 ? int.Parse(dialogo[l].Split(':')[1]) : -1));
-                                                                dial.Scelte.Add(new Scelta(dialogo[0], scelte));
-                                                            }
+                                                            string[] dialogo = sr2.ReadLine().Split(';');
+                                                            List<Tuple<string,int>> scelte = new List<Tuple<string,int>>();
+                                                            for(int l = 1; l < dialogo.Length; l++)
+                                                                scelte.Add(new Tuple<string,int>(dialogo[l].Split(':')[0], dialogo[l].Split(':').Length > 1 ? int.Parse(dialogo[l].Split(':')[1]) : -1));
+                                                            dial.Scelte.Add(new Scelta(dialogo[0], scelte));
                                                         }
                                                     }
                                                 }
@@ -332,6 +347,14 @@ namespace BasicAdventureGame
                     if (ent.Nome == nome && ent is Persona)
                     {
                         Persona p = (Persona)ent;
+
+						if (_profonditàScelta == -1)
+						{
+							_profonditàScelta++;
+							CaricaOpzioni(nome);
+							return nome + ": " + p.Dial.Scelte[_profonditàScelta].Entrata + "\n";
+						}
+
                         int opz = 0;
                         for (int i = 0; i < p.Dial.Scelte[_profonditàScelta].Opzioni.Count; i++)
                         {
@@ -345,6 +368,7 @@ namespace BasicAdventureGame
                                 break;
                             }
                         }
+
 						if (check)
 						{
 							risposta = p.Dial.Scelte[opz].Entrata;
@@ -356,10 +380,7 @@ namespace BasicAdventureGame
 							risposta = "Tu: " + opzione + "\n" + "Ma non risponde...\n";
 						}
 
-						if (_profonditàScelta != lastProfondità)
-						{
-							CaricaOpzioni(nome);
-						}
+						CaricaOpzioni(nome);
 
 						return risposta;
                     }
@@ -372,15 +393,27 @@ namespace BasicAdventureGame
 
 		public void CaricaOpzioni(string n)
 		{
-			foreach (Entità ent in Mappa[IndiceStanza].Cose)
+			if (Mappa[IndiceStanza].Cose != null)
 			{
-				_frase.Items.Clear();
-				if (ent.Nome == n && ent is Persona)
+				foreach (Entità ent in Mappa[IndiceStanza].Cose)
 				{
-					Persona p = (Persona)ent;
-					foreach (Tuple<string, int> t in p.Dial.Scelte[_profonditàScelta].Opzioni)
+					_frase.Items.Clear();
+					if (ent.Nome == n && ent is Persona)
 					{
-						_frase.Items.Add(t.Item1);
+						Persona p = (Persona)ent;
+						if (_profonditàScelta != -1)
+						{
+							if (p.Dial.Scelte[_profonditàScelta].Opzioni.Count == 0)
+							{
+								_profonditàScelta = -1;
+								_frase.Items.Clear();
+								return;
+							}
+							foreach (Tuple<string, int> t in p.Dial.Scelte[_profonditàScelta].Opzioni)
+							{
+								_frase.Items.Add(t.Item1);
+							}
+						}
 					}
 				}
 			}

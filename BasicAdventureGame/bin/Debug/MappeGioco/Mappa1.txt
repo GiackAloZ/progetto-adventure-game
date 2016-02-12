@@ -4,7 +4,7 @@
 		si vede la strada principale, true, 2
 		null
 		vedi dei magazzini, false, 3
-1, Campi coltivati
+1, Campi coltivati, 1
 Persona:Giardiniere,Vedi un giardiniere intento nel suo lavoro quotidiano.,100,1
 		vedi un grande lago, true, 5
 		null
