@@ -10,8 +10,9 @@ Persona:Giardiniere,Vedi un giardiniere intento nel suo lavoro quotidiano.,100,1
 		null
 		c'è il villaggio da cui sei partito, true, 0
 		null
-2, Strada Principale, 1
+2, Strada Principale, 2
 Persona:Vecchio,Vedi un anziano signore vestito di nero seduto sulla strada principale.,60,0
+Persona:Senza-tetto,C'è un senza-tetto che è seduto ai bordi della strada,30,2
 		null
 		null
 		prosegui per la strada principale, true, 4

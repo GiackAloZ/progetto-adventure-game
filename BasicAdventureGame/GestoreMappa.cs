@@ -135,6 +135,7 @@ namespace BasicAdventureGame
             //Controllo delle eventuali entità presenti nell'Ambiente di arrivo
             if(Mappa[IndiceStanza].Cose != null)
             {
+                _interlocutore.Items.Clear();
                 bool checkDialogs = false;
                 foreach (Entità ent in Mappa[IndiceStanza].Cose)
                 {
@@ -144,7 +145,6 @@ namespace BasicAdventureGame
                         st += p.Descrizione + "\n";
                         if (p.Dial != null)
                         {
-                            _interlocutore.Items.Clear();
                             _frase.Items.Clear();
                             _interlocutore.Items.Add(p.Nome);
                             checkDialogs = true;
@@ -336,6 +336,11 @@ namespace BasicAdventureGame
         {
 			int lastProfondità = _profonditàScelta;
             string nome = (string)_interlocutore.SelectedItem;
+            if(nome == null)
+            {
+                return "Scegli con chi vuoi parlare\n";
+            }
+
             if (_interlocutoreAttuale == "" || _interlocutoreAttuale == nome)
             {
                 _interlocutoreAttuale = nome;
@@ -362,7 +367,7 @@ namespace BasicAdventureGame
                             {
 								if (p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2 >= 1)
 								{
-									opz = p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2;
+                                    opz = p.Dial.Scelte[_profonditàScelta].Opzioni[i].Item2;
 									check = true;
 								}
                                 break;
@@ -378,6 +383,7 @@ namespace BasicAdventureGame
 						else
 						{
 							risposta = "Tu: " + opzione + "\n" + "Ma non risponde...\n";
+                            _profonditàScelta = -1;
 						}
 
 						CaricaOpzioni(nome);
@@ -388,16 +394,16 @@ namespace BasicAdventureGame
                 return "";
             }
             else
-                return "Stavi parlando con " + nome + "!";
+                return "Stavi parlando con " + _interlocutoreAttuale + "!";
         }
 
 		public void CaricaOpzioni(string n)
 		{
-			if (Mappa[IndiceStanza].Cose != null)
+            _frase.Items.Clear();
+            if (Mappa[IndiceStanza].Cose != null)
 			{
 				foreach (Entità ent in Mappa[IndiceStanza].Cose)
 				{
-					_frase.Items.Clear();
 					if (ent.Nome == n && ent is Persona)
 					{
 						Persona p = (Persona)ent;
@@ -406,6 +412,7 @@ namespace BasicAdventureGame
 							if (p.Dial.Scelte[_profonditàScelta].Opzioni.Count == 0)
 							{
 								_profonditàScelta = -1;
+                                _interlocutoreAttuale = "";
 								_frase.Items.Clear();
 								return;
 							}
