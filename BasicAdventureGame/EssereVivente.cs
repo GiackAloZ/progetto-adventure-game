@@ -11,15 +11,13 @@ namespace BasicAdventureGame
 
         public override string Nome { get; set; }
 
-        public int Vita { get; set; }
+        public int Salute { get; set; }
 
-        public EssereVivente() { }
+        public EssereVivente() : base() { }
 
-        public EssereVivente(string n, string d, int v)
+        public EssereVivente(string n, string d, int s) : base(n, d)
         {
-            Nome = n;
-            Descrizione = d;
-            Vita = v;
+            Salute = s;
         }
     }
 }

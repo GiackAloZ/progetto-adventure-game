@@ -9,13 +9,10 @@ namespace BasicAdventureGame
     {
         public Dialogo Dial { get; set; }
 
-        public Persona() { }
+		public Persona() : base() { }
 
-        public Persona(string n, string d, int v, Dialogo dial)
+        public Persona(string n, string d, int s, Dialogo dial) : base(n, d, s)
         {
-            Nome = n;
-            Descrizione = d;
-            Vita = v;
             Dial = dial;
         }
     }

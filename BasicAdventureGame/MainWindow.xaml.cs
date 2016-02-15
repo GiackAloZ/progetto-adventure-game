@@ -268,8 +268,6 @@ namespace BasicAdventureGame
 
         private void btnVaVersoNord_Click(object sender, RoutedEventArgs e)
         {
-            //if (ambienti[indiceStanza].Passaggi[(int)Direzioni.Nord].Aperto)
-            //    CambiaAmbiente(ambienti[indiceStanza].Passaggi[(int)Direzioni.Nord].IndiceAmbienteDestinazione);
             txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Nord);
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -277,8 +275,6 @@ namespace BasicAdventureGame
 
         private void btnVaVersoEst_Click(object sender, RoutedEventArgs e)
         {
-            //if (ambienti[indiceStanza].Passaggi[(int)Direzioni.Est].Aperto)
-            //    CambiaAmbiente(ambienti[indiceStanza].Passaggi[(int)Direzioni.Est].IndiceAmbienteDestinazione);
 			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Est);
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -286,8 +282,6 @@ namespace BasicAdventureGame
 
         private void btnVaVersoSud_Click(object sender, RoutedEventArgs e)
         {
-            //if (ambienti[indiceStanza].Passaggi[(int)Direzioni.Sud].Aperto)
-            //    CambiaAmbiente(ambienti[indiceStanza].Passaggi[(int)Direzioni.Sud].IndiceAmbienteDestinazione);
 			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Sud);
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -295,8 +289,6 @@ namespace BasicAdventureGame
 
         private void btnVaVersoOvest_Click(object sender, RoutedEventArgs e)
         {
-            //if (ambienti[indiceStanza].Passaggi[(int)Direzioni.Ovest].Aperto)
-            //    CambiaAmbiente(ambienti[indiceStanza].Passaggi[(int)Direzioni.Ovest].IndiceAmbienteDestinazione);
 			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Ovest);
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
