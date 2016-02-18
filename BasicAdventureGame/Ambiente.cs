@@ -23,9 +23,11 @@ namespace BasicAdventureGame
 		/// <summary>
 		/// Vettore di Azioni che contiene tutte le azione dell'Ambiente
 		/// </summary>
-        public Azione[] Azioni { get; set; }
+        public List<Azione> Azioni { get; set; }
 
         public List<Entità> Cose { get; set; }
+
+        public Inventario Inv { get; set; }
 
         /// <summary>
         /// Il costruttore della classe Ambiente
@@ -39,6 +41,8 @@ namespace BasicAdventureGame
 		{
 			Descrizione = d;
 			Passaggi = new Passaggio[] { pn, pe, ps, po };
+            Cose = new List<Entità>();
+            Inv = new Inventario();
 		}
 	}
 }

@@ -26,5 +26,17 @@ namespace BasicAdventureGame
 		/// <param name="m">Mappa sulla quale eseguire l'azione</param>
 		/// <returns>Messaggio da stampare nel log</returns>
 		abstract public string Esegui(GestoreMappa m);
+
+        public Azione()
+        {
+            Nome = "";
+            Descrizione = "";
+        }
+
+        public Azione(string n, string d)
+        {
+            Nome = n;
+            Descrizione = d;
+        }
 	}
 }

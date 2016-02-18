@@ -35,10 +35,8 @@ namespace BasicAdventureGame
 		/// </summary>
 		/// <param name="iap">Indice partenza</param>
 		/// <param name="iaa">Indice arrivo</param>
-		public ApriPassaggio(int iap, int iaa)
+		public ApriPassaggio(int iap, int iaa) : base("Open", "Apre il passaggio tra due ambienti")
 		{
-			Nome = "Open";
-			Descrizione = "Apre il passaggio tra due ambienti";
 			IndiceAmbientePartenza = iap;
 			IndiceAmbienteArrivo = iaa;
 		}

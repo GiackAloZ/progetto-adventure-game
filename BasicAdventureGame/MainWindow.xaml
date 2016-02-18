@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BasicAdventureGame"
         mc:Ignorable="d"
-        Title="Avventura grafica di base - Progetto di avvio" Height="682" Width="1022.834" 
+        Title="Avventura grafica di base - Progetto di avvio" Height="678" Width="1321.834" 
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.InputBindings>
         <!--Definisce la combinazione di tasti di scelta rapida, non essendo predefiniti come per gli altri comandi, 
@@ -44,7 +44,7 @@
             </MenuItem>
             <MenuItem Header="_Aiuto" Command="Help" />
         </Menu>
-        <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,293" VerticalAlignment="Stretch" Orientation="Horizontal" Grid.Row="1">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,10,0,283" VerticalAlignment="Stretch" Orientation="Horizontal" Grid.Row="1">
             <!--Finestra grafica sul mondo virtuale.-->
 
             <!--Statistiche del personaggio controllato dall'utente.-->
@@ -118,17 +118,23 @@
                             Width="142"/>
                 </Canvas>
             </GroupBox>
-            <GroupBox x:Name="grpLog" Header="Log" HorizontalAlignment="Stretch" Margin="5,5,5,1" 
-                      VerticalAlignment="Stretch" BorderBrush="#FF0A9CF3" Width="751">
+            <GroupBox x:Name="grpLog" Header="Log" HorizontalAlignment="Center" Margin="5,5,5,1" 
+                      VerticalAlignment="Stretch" BorderBrush="#FF0A9CF3" Width="860">
                 <TextBox x:Name="txtEsito" Margin="0,0,-2,1" Text="Sei entrato nell'hangar principale della Morte Nera.&#xA;Sono presenti: R2D2, Han Solo e Darth Vader.&#xA;In fondo vedi una nave pronta al decollo." TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" 
             		VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" />
+            </GroupBox>
+            <GroupBox x:Name="grpInventario_Copy" Header="Inventario Ambiente" HorizontalAlignment="Stretch" Margin="5,5,5,10" VerticalAlignment="Stretch" 
+            	Width="181" BorderBrush="#FF0A9CF3">
+                <Canvas>
+                    <ListBox x:Name="lstInventario1" Height="352" Canvas.Left="10" Canvas.Top="10" Width="151" BorderBrush="#FF0A9CF3"/>
+                </Canvas>
             </GroupBox>
         </StackPanel>
 
         <!--Output testuale del programma.-->
 
         <!--Comandi raggrupati per genere tramite l'uso di GroupBox.-->
-        <StackPanel HorizontalAlignment="Stretch" Margin="0,419,10,86" VerticalAlignment="Stretch" Grid.Row="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Stretch" Margin="0,425,10,80" VerticalAlignment="Stretch" Grid.Row="1" Orientation="Horizontal">
             <GroupBox x:Name="grpSpostamenti" Header="Spostamento" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch"
                       Width="137" BorderBrush="#FF0A9CF3">
                 <Canvas>
@@ -179,14 +185,14 @@
                 </Canvas>
             </GroupBox>
             <GroupBox x:Name="grpInventario" Header="Inventario" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
-                      Width="181" BorderBrush="#FF0A9CF3">
+                      Width="495" BorderBrush="#FF0A9CF3">
                 <Canvas>
                     <Button x:Name="btnLasciaOggetto" Content="Lascia" Canvas.Left="10" Canvas.Top="10" Width="47"/>
                     <Button x:Name="btnUsaOggetto" Content="Usa" Canvas.Left="102" Canvas.Top="10" Width="59"/>
                     <Button x:Name="btnIndossaRiponeOggetto" Content="Indossa/Riponi" Canvas.Left="10" Canvas.Top="35" Width="87"/>
                     <Button x:Name="btnDaOggetto" Content="Dai" Canvas.Left="62" Canvas.Top="10" Width="35"/>
                     <Button x:Name="btnEliminaOggetto" Content="Elimina" Canvas.Left="102" Canvas.Top="35" Width="57"/>
-                    <ListBox x:Name="lstInventario" Height="90" Canvas.Left="10" Canvas.Top="64" Width="151" BorderBrush="#FF0A9CF3"/>
+                    <ListBox x:Name="lstInventario" Height="90" Canvas.Left="10" Canvas.Top="64" Width="463" BorderBrush="#FF0A9CF3"/>
                 </Canvas>
             </GroupBox>
         </StackPanel>

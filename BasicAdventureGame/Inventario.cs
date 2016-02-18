@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace BasicAdventureGame
+{
+    class Inventario
+    {
+        public List<Oggetto> Oggetti { get; set; }
+
+        public Inventario() { Oggetti = new List<Oggetto>(); }
+
+        public Inventario(List<Oggetto> oggs)
+        {
+            Oggetti = new List<Oggetto>(oggs);
+        }
+
+        public string Aggiungi(Oggetto obj)
+        {
+            Oggetti.Add(obj);
+            return "Hai aggiunto " + obj.Nome + "\n";
+        }
+
+        public string Elimina(Oggetto obj)
+        {
+            Oggetti.Remove(obj);
+            return "Hai eliminato " + obj.Nome + "\n";
+        }
+
+        public string Lascia(Oggetto obj, Inventario inv)
+        {
+            Oggetti.Remove(obj);
+            inv.Aggiungi(obj);
+            return "Hai lasciato " + obj.Nome + "\n";
+        }
+    }
+}

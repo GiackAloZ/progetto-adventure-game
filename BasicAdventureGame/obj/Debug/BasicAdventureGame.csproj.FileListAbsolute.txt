@@ -131,9 +131,6 @@ C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\Help\H
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\MappeGioco\Mappa1.txt
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\BasicAdventureGame.exe
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\BasicAdventureGame.pdb
-C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\System.Net.Http.dll
-C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\System.Net.Http.xml
-C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\it\System.Net.Http.resources.dll
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\obj\Debug\MainWindow.baml
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\obj\Debug\BasicAdventureGame.g.resources
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\obj\Debug\BasicAdventureGame.Properties.Resources.resources

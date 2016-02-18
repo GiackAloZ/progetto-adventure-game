@@ -13,12 +13,26 @@ namespace BasicAdventureGame
 
 		public int Esperienza { get; set; }
 
+        public Inventario Inv { get; set; }
+
 		public Giocatore(string n, string d, int s, int dif, int a, int p)
 			: base(n, d, s, dif, a, p, 1)
 		{
 			Stamina = 100;
 			Esperienza = 0;
 			_esperienzeSalitaLivello = new List<int>(new int[] { 0, 10, 30, 70, 150 });
+            Inv = new Inventario();
 		}
+
+        public bool GuadagnaEsperienza(int exp)
+        {
+            Esperienza += exp;
+            if(_esperienzeSalitaLivello[Livello] <= Esperienza)
+            {
+                Livello++;
+                return true;
+            }
+            return false;
+        }
 	}
 }

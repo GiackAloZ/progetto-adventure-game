@@ -119,7 +119,7 @@ namespace BasicAdventureGame
             {
                 if(Mappa[i].Azioni != null)
                 {
-                    for (int j = 0; j < Mappa[i].Azioni.Length; j++)
+                    for (int j = 0; j < Mappa[i].Azioni.Count; j++)
                     {
                         if (Mappa[i].Azioni[j] != null && Mappa[i].Azioni[j].GetType() == typeof(ApriPassaggio))
                         {
@@ -133,7 +133,7 @@ namespace BasicAdventureGame
             }
             
             //Controllo delle eventuali entità presenti nell'Ambiente di arrivo
-            if(Mappa[IndiceStanza].Cose != null)
+            if(Mappa[IndiceStanza].Cose.Count != 0)
             {
                 _interlocutore.Items.Clear();
                 bool checkDialogs = false;
@@ -222,29 +222,27 @@ namespace BasicAdventureGame
 						//Aggiunta della descrizione dell'ambiente
 						Mappa[count].Descrizione = st[1].Trim().Replace("\\n", "\n");
 
-						//Controlla se sono presenti azioni nell'ambiente
+						//Controlla se sono presenti cose nell'ambiente
 						if (st.Length > 2)
 						{
-							//Se sono presenti, le crea e le inserisce nel vettore Azioni della classe Ambiente
-							int nAzioni = int.Parse(st[2]);
-                            Mappa[int.Parse(st[0].Trim())].Azioni = new Azione[nAzioni];
-                            Mappa[int.Parse(st[0].Trim())].Cose = new List<Entità>();
-                            for (int i = 0; i < nAzioni; i++)
+							int nCose = int.Parse(st[2]);
+                            Mappa[int.Parse(st[0].Trim())].Azioni = new List<Azione>();
+                            for (int i = 0; i < nCose; i++)
 							{
 								string[] act = sr.ReadLine().Split(':');
-                                string nomeAzione = act[0];
-                                string effettoAzione = act[1];
+                                string nomeCosa = act[0];
+                                string effettoCosa = act[1];
 
-                                switch (nomeAzione)
+                                switch (nomeCosa)
                                 {
                                     case "Open":
-                                        string indicePartenza = effettoAzione.Split('-')[0];
-                                        string indiceArrivo = effettoAzione.Split('-')[1];
-                                        Mappa[int.Parse(st[0].Trim())].Azioni[i] = new ApriPassaggio(int.Parse(indicePartenza), int.Parse(indiceArrivo));
+                                        string indicePartenza = effettoCosa.Split('-')[0];
+                                        string indiceArrivo = effettoCosa.Split('-')[1];
+                                        Mappa[int.Parse(st[0].Trim())].Azioni.Add(new ApriPassaggio(int.Parse(indicePartenza), int.Parse(indiceArrivo)));
                                         break;
                                     case "Persona":
                                         Dialogo dial = new Dialogo();
-                                        string[] infos = effettoAzione.Split(',');
+                                        string[] infos = effettoCosa.Split(',');
                                         string nome = infos[0];
                                         string descrizione = infos[1];
                                         int vita = int.Parse(infos[2]);
@@ -299,6 +297,9 @@ namespace BasicAdventureGame
                                             dial = null;
                                         }
                                         Mappa[int.Parse(st[0].Trim())].Cose.Add(new Persona(nome, descrizione, vita, dial));
+                                        break;
+                                    case "Oggetto":
+
                                         break;
                                     default:
                                         throw new NotImplementedException();   
@@ -383,6 +384,7 @@ namespace BasicAdventureGame
 						else
 						{
 							risposta = "Tu: " + opzione + "\n" + "Ma non risponde...\n";
+                            _interlocutoreAttuale = "";
                             _profonditàScelta = -1;
 						}
 
@@ -400,30 +402,34 @@ namespace BasicAdventureGame
 		public void CaricaOpzioni(string n)
 		{
             _frase.Items.Clear();
-            if (Mappa[IndiceStanza].Cose != null)
-			{
-				foreach (Entità ent in Mappa[IndiceStanza].Cose)
-				{
-					if (ent.Nome == n && ent is Persona)
-					{
-						Persona p = (Persona)ent;
-						if (_profonditàScelta != -1)
-						{
-							if (p.Dial.Scelte[_profonditàScelta].Opzioni.Count == 0)
-							{
-								_profonditàScelta = -1;
-                                _interlocutoreAttuale = "";
-								_frase.Items.Clear();
-								return;
-							}
-							foreach (Tuple<string, int> t in p.Dial.Scelte[_profonditàScelta].Opzioni)
-							{
-								_frase.Items.Add(t.Item1);
-							}
-						}
-					}
-				}
-			}
+            if(_interlocutoreAttuale == n)
+            {
+
+                if (Mappa[IndiceStanza].Cose.Count != 0)
+			    {
+				    foreach (Entità ent in Mappa[IndiceStanza].Cose)
+				    {
+					    if (ent.Nome == n && ent is Persona)
+					    {
+						    Persona p = (Persona)ent;
+						    if (_profonditàScelta != -1)
+						    {
+							    if (p.Dial.Scelte[_profonditàScelta].Opzioni.Count == 0)
+							    {
+								    _profonditàScelta = -1;
+                                    _interlocutoreAttuale = "";
+								    _frase.Items.Clear();
+								    return;
+							    }
+							    foreach (Tuple<string, int> t in p.Dial.Scelte[_profonditàScelta].Opzioni)
+							    {
+								    _frase.Items.Add(t.Item1);
+							    }
+						    }
+					    }
+				    }
+			    }
+            }
 		}
 	}
 }
