@@ -15,5 +15,9 @@ namespace BasicAdventureGame
 
         public Oggetto(string n, string d) : base(n, d) { }
 
+		public override string ToString()
+		{
+			return Nome;
+		}
     }
 }

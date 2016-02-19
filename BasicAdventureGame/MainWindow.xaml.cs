@@ -44,7 +44,7 @@ namespace BasicAdventureGame
         {
 			//Creazione gestore mappa con i bottoni che gestiranno le direzioni
             btnParla.IsEnabled = false;
-			mappaPrincipale = new GestoreMappa(null, new Button[] { btnVaVersoNord, btnVaVersoEst, btnVaVersoSud, btnVaVersoOvest }, null, cmbInterlocutore, cmbFrase, btnParla);
+			mappaPrincipale = new GestoreMappa(Player, null, new Button[] { btnVaVersoNord, btnVaVersoEst, btnVaVersoSud, btnVaVersoOvest }, null, cmbInterlocutore, cmbFrase, btnParla, lstInventarioAmbiente, cmbOggettoCoinvolto, lstInventarioGiocatore);
 
 			//Caricamento mappa da file
 			mappaPrincipale.CaricaMappa("MappeGioco\\Mappa1.txt");
@@ -126,6 +126,13 @@ namespace BasicAdventureGame
 		private void cmbInterlocutore_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			mappaPrincipale.CaricaOpzioni((string)cmbInterlocutore.SelectedItem);
+		}
+
+		private void btnPrende_Click(object sender, RoutedEventArgs e)
+		{
+			txtEsito.Text += "\n" + mappaPrincipale.PrendiOggetto((Oggetto)cmbOggettoCoinvolto.SelectedItem);
+			txtEsito.Focus();
+			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
     }
 }

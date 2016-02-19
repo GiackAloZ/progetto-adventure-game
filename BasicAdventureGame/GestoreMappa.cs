@@ -26,7 +26,15 @@ namespace BasicAdventureGame
 		/// </summary>
 		private Button[] _pulsantiSpostamento;
 
+		private Giocatore _giocatore;
+
+		private ListBox _invGiocatore;
+
+		private ListBox _invAmbiente;
+
         private ComboBox _interlocutore;
+
+		private ComboBox _oggettiCoinvolti;
 
         private ComboBox _frase;
 
@@ -51,7 +59,7 @@ namespace BasicAdventureGame
 		/// </summary>
 		/// <param name="m">Vettore di Ambiente</param>
 		/// <param name="cs">Vettore di Button</param>
-		public GestoreMappa(Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p)
+		public GestoreMappa(Giocatore g, Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p, ListBox a, ComboBox oggs, ListBox ig)
 		{
 			if (m != null)
 				Mappa = (Ambiente[])m.Clone();
@@ -59,9 +67,13 @@ namespace BasicAdventureGame
 				Mappa = null;
 			_pulsantiSpostamento = (Button[])cs.Clone();
 
+			_giocatore = g;
             _interlocutore = i;
             _frase = f;
             _parla = p;
+			_invAmbiente = a;
+			_invGiocatore = ig;
+			_oggettiCoinvolti = oggs;
 			_profonditàScelta = -1;
 		}
 
@@ -159,6 +171,16 @@ namespace BasicAdventureGame
 				_frase.Items.Clear();
                 _parla.IsEnabled = false;
             }
+
+			if (Mappa[IndiceStanza].Inv.Oggetti.Count != 0)
+			{
+				CaricaInventarioAmbiente();
+			}
+			else
+			{
+				_invAmbiente.Items.Clear();
+				_oggettiCoinvolti.Items.Clear();
+			}
 
             _interlocutoreAttuale = "";
             _profonditàScelta = -1;
@@ -299,6 +321,27 @@ namespace BasicAdventureGame
                                         Mappa[int.Parse(st[0].Trim())].Cose.Add(new Persona(nome, descrizione, vita, dial));
                                         break;
                                     case "Oggetto":
+										string numOgg = effettoCosa;
+										try
+										{
+											using (StreamReader sr2 = new StreamReader("Oggetti\\Oggetti.txt"))
+											{
+												string s = sr2.ReadLine();
+												while (s.Split(',')[0] != numOgg)
+												{
+													s = sr2.ReadLine();
+												}
+												Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Oggetto(s.Split(',')[1].Trim(), s.Split(',')[2].Trim()));
+											}
+										}
+										catch (IOException ex)
+										{
+											MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
+										}
+										catch (Exception ex)
+										{
+											MessageBox.Show("Eccezione non gestita : " + ex.Message);
+										}
 
                                         break;
                                     default:
@@ -430,6 +473,38 @@ namespace BasicAdventureGame
 				    }
 			    }
             }
+		}
+
+		public void CaricaInventarioAmbiente()
+		{
+			foreach (Oggetto ogg in Mappa[IndiceStanza].Inv.Oggetti)
+			{
+				_invAmbiente.Items.Add(ogg);
+				_oggettiCoinvolti.Items.Add(ogg);
+			}
+		}
+
+		public void CaricaInventarioGiocatore()
+		{
+			foreach (Oggetto ogg in _giocatore.Inv.Oggetti)
+			{
+				_invGiocatore.Items.Add(ogg);
+			}
+		}
+
+		public string PrendiOggetto(Oggetto ogg)
+		{
+			if (_oggettiCoinvolti.SelectedIndex != -1)
+			{
+				string s = _giocatore.Inv.Prendi(ogg, Mappa[IndiceStanza].Inv);
+				CaricaInventarioGiocatore();
+				_invAmbiente.Items.Clear();
+				_oggettiCoinvolti.Items.Clear();
+				CaricaInventarioAmbiente();
+				return s;
+			}
+			else
+				return "Nessun oggetto selezionato!\n";
 		}
 	}
 }

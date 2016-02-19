@@ -175,3 +175,4 @@ C:\Users\giacomo.aloisi\Desktop\progetto figo\BasicAdventureGame\obj\Debug\Basic
 C:\Users\giacomo.aloisi\Desktop\progetto figo\BasicAdventureGame\bin\Debug\Dialoghi\Dialoghi.txt
 C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\Dialoghi\Dialoghi.txt
 C:\Users\giacomo.aloisi\Desktop\ProgettoAdventureGame\BasicAdventureGame\bin\Debug\Dialoghi\Dialoghi.txt
+C:\Users\giacomo.aloisi\Desktop\ProgettoFigo\BasicAdventureGame\bin\Debug\Oggetti\Oggetti.txt

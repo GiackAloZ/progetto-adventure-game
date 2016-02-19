@@ -34,5 +34,12 @@ namespace BasicAdventureGame
             inv.Aggiungi(obj);
             return "Hai lasciato " + obj.Nome + "\n";
         }
+
+		public string Prendi(Oggetto obj, Inventario inv)
+		{
+			inv.Elimina(obj);
+			Oggetti.Add(obj);
+			return "Hai preso " + obj.Nome + "\n";
+		}
     }
 }
