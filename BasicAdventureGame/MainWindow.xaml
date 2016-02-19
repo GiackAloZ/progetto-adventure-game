@@ -187,7 +187,7 @@
             <GroupBox x:Name="grpInventario" Header="Inventario" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
                       Width="495" BorderBrush="#FF0A9CF3">
                 <Canvas>
-                    <Button x:Name="btnLasciaOggetto" Content="Lascia" Canvas.Left="10" Canvas.Top="10" Width="47"/>
+                    <Button x:Name="btnLasciaOggetto" Content="Lascia" Canvas.Left="10" Canvas.Top="10" Width="47" Click="btnLasciaOggetto_Click"/>
                     <Button x:Name="btnUsaOggetto" Content="Usa" Canvas.Left="102" Canvas.Top="10" Width="59"/>
                     <Button x:Name="btnIndossaRiponeOggetto" Content="Indossa/Riponi" Canvas.Left="10" Canvas.Top="35" Width="87"/>
                     <Button x:Name="btnDaOggetto" Content="Dai" Canvas.Left="62" Canvas.Top="10" Width="35"/>

@@ -1,1 +1,2 @@
 ﻿0, Pozione, Una pozione curativa
+1, Ciccio, E' un ciccio

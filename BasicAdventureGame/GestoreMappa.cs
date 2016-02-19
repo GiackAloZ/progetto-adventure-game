@@ -172,14 +172,12 @@ namespace BasicAdventureGame
                 _parla.IsEnabled = false;
             }
 
+			_invAmbiente.Items.Clear();
+			_oggettiCoinvolti.Items.Clear();
+
 			if (Mappa[IndiceStanza].Inv.Oggetti.Count != 0)
 			{
 				CaricaInventarioAmbiente();
-			}
-			else
-			{
-				_invAmbiente.Items.Clear();
-				_oggettiCoinvolti.Items.Clear();
 			}
 
             _interlocutoreAttuale = "";
@@ -475,7 +473,7 @@ namespace BasicAdventureGame
             }
 		}
 
-		public void CaricaInventarioAmbiente()
+		private void CaricaInventarioAmbiente()
 		{
 			foreach (Oggetto ogg in Mappa[IndiceStanza].Inv.Oggetti)
 			{
@@ -484,7 +482,7 @@ namespace BasicAdventureGame
 			}
 		}
 
-		public void CaricaInventarioGiocatore()
+		private void CaricaInventarioGiocatore()
 		{
 			foreach (Oggetto ogg in _giocatore.Inv.Oggetti)
 			{
@@ -497,9 +495,25 @@ namespace BasicAdventureGame
 			if (_oggettiCoinvolti.SelectedIndex != -1)
 			{
 				string s = _giocatore.Inv.Prendi(ogg, Mappa[IndiceStanza].Inv);
+				_invGiocatore.Items.Clear();
 				CaricaInventarioGiocatore();
 				_invAmbiente.Items.Clear();
 				_oggettiCoinvolti.Items.Clear();
+				CaricaInventarioAmbiente();
+				return s;
+			}
+			else
+				return "Nessun oggetto selezionato!\n";
+		}
+
+		public string LasciaOggetto(Oggetto ogg)
+		{
+			if (_invGiocatore.SelectedIndex != -1)
+			{
+				string s = _giocatore.Inv.Lascia(ogg, Mappa[IndiceStanza].Inv);
+				_invGiocatore.Items.Clear();
+				CaricaInventarioGiocatore();
+				_invAmbiente.Items.Clear();
 				CaricaInventarioAmbiente();
 				return s;
 			}

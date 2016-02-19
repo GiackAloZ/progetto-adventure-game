@@ -29,7 +29,9 @@ Open:0-3
 		null
 		null
 		null
-5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.
+5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.,2
+Oggetto:1
+Persona:Farne,Vedi farne che gioca a MW3,1000000,2
 		null
 		null
 		vedi i campi coltivati, true, 1
