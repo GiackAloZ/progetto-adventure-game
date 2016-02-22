@@ -32,7 +32,7 @@
   <Class Name="BasicAdventureGame.GestoreMappa">
     <Position X="2.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AIShACABAgAAIAAAAAIAAABABEAADQAAAAEgCCAAAAE=</HashCode>
+      <HashCode>AIShACABAgAAIAAAAAIAAABABkAADQAAAAEgCCAAAAE=</HashCode>
       <FileName>GestoreMappa.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -134,7 +134,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAAEAgACA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAEAgACA=</HashCode>
       <FileName>Giocatore.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -158,11 +158,45 @@
       <FileName>Scelta.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BasicAdventureGame.Arma">
+    <Position X="22.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA=</HashCode>
+      <FileName>Arma.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Impugnatura" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Indumento">
+    <Position X="23.75" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Indumento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tipo" />
+    </ShowAsAssociation>
+  </Class>
   <Enum Name="BasicAdventureGame.Direzioni">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAACAAAQAAAAAAAIAAAQ=</HashCode>
       <FileName>Direzioni.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BasicAdventureGame.Impugnature">
+    <Position X="26" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAABAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Impugnature.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BasicAdventureGame.TipoIndumento">
+    <Position X="27.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAwAEAAIAAAA=</HashCode>
+      <FileName>TipoIndumento.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

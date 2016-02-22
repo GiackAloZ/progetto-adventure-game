@@ -538,5 +538,10 @@ namespace BasicAdventureGame
 			else
 				return "Nessun oggetto selezionato!\n";
 		}
+
+        public string EquipaggiaArma(Arma a)
+        {
+            return a.Equipaggia(_giocatore);
+        }
 	}
 }

@@ -56,10 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Arma.cs" />
     <Compile Include="Combattente.cs" />
     <Compile Include="Giocatore.cs" />
+    <Compile Include="Impugnature.cs" />
+    <Compile Include="Indumento.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Scelta.cs" />
+    <Compile Include="TipoIndumento.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
