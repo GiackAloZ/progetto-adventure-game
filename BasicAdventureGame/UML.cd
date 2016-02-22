@@ -1,48 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="BasicAdventureGame.Ambiente">
-    <Position X="3.25" Y="0.75" Width="4" />
+    <Position X="8.25" Y="1" Width="5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAACAAgAAEAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Ambiente.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Inv" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Passaggi" />
+      <Property Name="Azioni" />
+      <Property Name="Cose" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BasicAdventureGame.Azione">
-    <Position X="8" Y="0.5" Width="2.75" />
+    <Position X="15.25" Y="0.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAA=</HashCode>
       <FileName>Azione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAdventureGame.ApriPassaggio">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Position X="19.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAEEAAA=</HashCode>
       <FileName>ApriPassaggio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAdventureGame.GestoreMappa">
-    <Position X="0.5" Y="3.75" Width="3.75" />
+    <Position X="2.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAgAAIAAAAAAAAAAAAAAACAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AIShACABAgAAIAAAAAIAAABABEAADQAAAAEgCCAAAAE=</HashCode>
       <FileName>GestoreMappa.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_giocatore" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Mappa" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="BasicAdventureGame.Passaggio">
-    <Position X="6.25" Y="3.5" Width="3.25" />
+    <Position X="6.75" Y="4.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Passaggio.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BasicAdventureGame.Inventario">
+    <Position X="13" Y="3.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAARAgAAAAAAA=</HashCode>
+      <FileName>Inventario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Oggetti" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Oggetto">
+    <Position X="18.5" Y="4.25" Width="3" />
+    <InheritanceLine Type="BasicAdventureGame.Entità" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="7.375" />
+        <Point X="15.542" Y="7.375" Type="JumpStart" />
+        <Point X="15.708" Y="7.375" Type="JumpEnd" />
+        <Point X="17.474" Y="7.375" />
+        <Point X="17.474" Y="5.625" />
+        <Point X="18.5" Y="5.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Oggetto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.Entità">
+    <Position X="10" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entità.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.EssereVivente">
+    <Position X="9.5" Y="9.5" Width="2.75" />
+    <InheritanceLine Type="BasicAdventureGame.Entità" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="8.69" />
+        <Point X="11.25" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAA=</HashCode>
+      <FileName>EssereVivente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.Combattente">
+    <Position X="18.5" Y="7.5" Width="3.5" />
+    <InheritanceLine Type="BasicAdventureGame.EssereVivente" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.25" Y="10" />
+        <Point X="14.519" Y="10" />
+        <Point X="14.519" Y="9" />
+        <Point X="15.542" Y="9" Type="JumpStart" />
+        <Point X="15.708" Y="9" Type="JumpEnd" />
+        <Point X="18.5" Y="9" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>Combattente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAdventureGame.Persona">
+    <Position X="4" Y="8.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dial" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Giocatore">
+    <Position X="14.75" Y="10.5" Width="3.75" />
+    <InheritanceLine Type="BasicAdventureGame.Combattente" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="9.954" />
+        <Point X="20.25" Y="10.125" />
+        <Point X="16.75" Y="10.125" />
+        <Point X="16.75" Y="10.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAAEAgACA=</HashCode>
+      <FileName>Giocatore.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Inv" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Dialogo">
+    <Position X="4" Y="11" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dialogo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Scelte" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BasicAdventureGame.Scelta">
+    <Position X="4" Y="13.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Scelta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="BasicAdventureGame.Direzioni">
-    <Position X="0.5" Y="1" Width="1.5" />
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAACAAAQAAAAAAAIAAAQ=</HashCode>
       <FileName>Direzioni.cs</FileName>

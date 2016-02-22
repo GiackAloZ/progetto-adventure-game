@@ -141,5 +141,12 @@ namespace BasicAdventureGame
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
+
+		private void btnEliminaOggetto_Click(object sender, RoutedEventArgs e)
+		{
+			txtEsito.Text += "\n" + mappaPrincipale.EliminaOggetto((Oggetto)lstInventarioGiocatore.SelectedItem);
+			txtEsito.Focus();
+			txtEsito.CaretIndex = txtEsito.Text.Length;
+		}
     }
 }

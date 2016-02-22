@@ -177,7 +177,7 @@ namespace BasicAdventureGame
 
 			if (Mappa[IndiceStanza].Inv.Oggetti.Count != 0)
 			{
-				CaricaInventarioAmbiente();
+				st += CaricaInventarioAmbiente();
 			}
 
             _interlocutoreAttuale = "";
@@ -473,13 +473,16 @@ namespace BasicAdventureGame
             }
 		}
 
-		private void CaricaInventarioAmbiente()
+		private string CaricaInventarioAmbiente()
 		{
+			string s = "Per terra trovi : \n";
 			foreach (Oggetto ogg in Mappa[IndiceStanza].Inv.Oggetti)
 			{
+				s += "\t" + ogg.Nome + "\n";
 				_invAmbiente.Items.Add(ogg);
 				_oggettiCoinvolti.Items.Add(ogg);
 			}
+			return s;
 		}
 
 		private void CaricaInventarioGiocatore()
@@ -511,6 +514,21 @@ namespace BasicAdventureGame
 			if (_invGiocatore.SelectedIndex != -1)
 			{
 				string s = _giocatore.Inv.Lascia(ogg, Mappa[IndiceStanza].Inv);
+				_invGiocatore.Items.Clear();
+				CaricaInventarioGiocatore();
+				_invAmbiente.Items.Clear();
+				CaricaInventarioAmbiente();
+				return s;
+			}
+			else
+				return "Nessun oggetto selezionato!\n";
+		}
+
+		public string EliminaOggetto(Oggetto ogg)
+		{
+			if (_invGiocatore.SelectedIndex != -1)
+			{
+				string s = _giocatore.Inv.Elimina(ogg);
 				_invGiocatore.Items.Clear();
 				CaricaInventarioGiocatore();
 				_invAmbiente.Items.Clear();
