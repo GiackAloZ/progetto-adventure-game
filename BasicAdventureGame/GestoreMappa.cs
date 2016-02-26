@@ -40,6 +40,10 @@ namespace BasicAdventureGame
 
         private Button _parla;
 
+		private ListBox _armi;
+
+		private ListBox _indumenti;
+
         private int _profonditàScelta;
 
         private string _interlocutoreAttuale = "";
@@ -59,7 +63,7 @@ namespace BasicAdventureGame
 		/// </summary>
 		/// <param name="m">Vettore di Ambiente</param>
 		/// <param name="cs">Vettore di Button</param>
-		public GestoreMappa(Giocatore g, Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p, ListBox a, ComboBox oggs, ListBox ig)
+		public GestoreMappa(Giocatore g, Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p, ListBox a, ComboBox oggs, ListBox ig, ListBox ar, ListBox ind)
 		{
 			if (m != null)
 				Mappa = (Ambiente[])m.Clone();
@@ -73,6 +77,8 @@ namespace BasicAdventureGame
             _parla = p;
 			_invAmbiente = a;
 			_invGiocatore = ig;
+			_armi = ar;
+			_indumenti = ind;
 			_oggettiCoinvolti = oggs;
 			_profonditàScelta = -1;
 		}
@@ -329,7 +335,23 @@ namespace BasicAdventureGame
 												{
 													s = sr2.ReadLine();
 												}
-												Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Oggetto(s.Split(',')[1].Trim(), s.Split(',')[2].Trim()));
+												string[] infoOggetto = s.Split(',');
+												if(infoOggetto.Length == 3)
+													Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Oggetto(infoOggetto[1].Trim(), infoOggetto[2].Trim()));
+												else if (infoOggetto.Length > 3)
+												{
+													if(infoOggetto[3].Trim() == "arma")
+													{
+														Impugnature imp;
+														if(infoOggetto[5].Trim() == "unamano")
+															imp = Impugnature.UnaMano;
+														else if(infoOggetto[5].Trim() == "duemani")
+															imp = Impugnature.DueMani;
+														else
+															imp = Impugnature.Nessuna;
+														Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Arma(infoOggetto[1].Trim(), infoOggetto[2].Trim(), int.Parse(infoOggetto[4].Trim()), imp));
+													}
+												}
 											}
 										}
 										catch (IOException ex)
@@ -539,9 +561,47 @@ namespace BasicAdventureGame
 				return "Nessun oggetto selezionato!\n";
 		}
 
-        public string EquipaggiaArma(Arma a)
+        public string Equipaggia(Oggetto ogg)
         {
-            return a.Equipaggia(_giocatore);
+			string s = "";
+			if (ogg is Arma)
+			{
+				Arma a = (Arma)ogg;
+				s = _giocatore.EquipaggiaArma(a);
+				CaricaArmi();
+			}
+			else if(ogg is Indumento)
+			{
+				Indumento i = (Indumento)ogg;
+				s = _giocatore.EquipaggiaIndumento(i);
+				CaricaIndumenti();
+			}
+			else
+			{
+				if (ogg != null)
+					return "Oggetto selezionato non equipaggiabile!\n";
+				else
+					return "Nessun oggetto selezionato!\n";
+			}
+			return s;
         }
+
+		private void CaricaArmi()
+		{
+			_armi.Items.Clear();
+			foreach (Arma a in _giocatore.ArmiEquipaggiate)
+			{
+				_armi.Items.Add(a);
+			}
+		}
+
+		private void CaricaIndumenti()
+		{
+			_indumenti.Items.Clear();
+			foreach (Indumento a in _giocatore.IndumentiEquipaggiati)
+			{
+				_indumenti.Items.Add(a);
+			}
+		}
 	}
 }

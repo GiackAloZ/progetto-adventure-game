@@ -185,14 +185,33 @@
                 </Canvas>
             </GroupBox>
             <GroupBox x:Name="grpInventario" Header="Inventario" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
-                      Width="495" BorderBrush="#FF0A9CF3">
+                      Width="267" BorderBrush="#FF0A9CF3">
                 <Canvas>
                     <Button x:Name="btnLasciaOggetto" Content="Lascia" Canvas.Left="10" Canvas.Top="10" Width="47" Click="btnLasciaOggetto_Click"/>
                     <Button x:Name="btnUsaOggetto" Content="Usa" Canvas.Left="102" Canvas.Top="10" Width="59"/>
-                    <Button x:Name="btnIndossaRiponeOggetto" Content="Indossa/Riponi" Canvas.Left="10" Canvas.Top="35" Width="87"/>
+                    <Button x:Name="btnEquipaggiaOggetto" Content="Equipaggia" Canvas.Left="10" Canvas.Top="35" Width="87" Click="btnEquipaggiaOggetto_Click"/>
                     <Button x:Name="btnDaOggetto" Content="Dai" Canvas.Left="62" Canvas.Top="10" Width="35"/>
                     <Button x:Name="btnEliminaOggetto" Content="Elimina" Canvas.Left="102" Canvas.Top="35" Width="57" Click="btnEliminaOggetto_Click"/>
-                    <ListBox x:Name="lstInventarioGiocatore" Height="90" Canvas.Left="10" Canvas.Top="64" Width="463" BorderBrush="#FF0A9CF3"/>
+                    <ListBox x:Name="lstInventarioGiocatore" Height="90" Canvas.Left="10" Canvas.Top="64" Width="235" BorderBrush="#FF0A9CF3"/>
+                </Canvas>
+            </GroupBox>
+            <GroupBox x:Name="grpInventario_Copy1" Header="Equipaggiamento" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
+            	Width="219" BorderBrush="#FF0A9CF3">
+                <Canvas>
+                    <GroupBox x:Name="grpArmi" Header="Armi" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                    	Width="100" BorderBrush="#FF0A9CF3" Height="160">
+                        <Canvas Margin="0,0,-2,-1">
+                            <ListBox x:Name="lstArmi" Height="106" Width="90"/>
+                            <Button x:Name="btnRiponiArma" Content="Riponi" Canvas.Left="22" Canvas.Top="111" Width="46" Click="btnLasciaOggetto_Click"/>
+                        </Canvas>
+                    </GroupBox>
+                    <GroupBox x:Name="grpIndumenti" Header="Indumenti" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                    	Width="102" BorderBrush="#FF0A9CF3" Height="160" Canvas.Left="105">
+                        <Canvas Margin="0,0,0,-1">
+                            <ListBox x:Name="lstIndumenti" Height="106" Width="90"/>
+                            <Button x:Name="btnRiponiIndumento" Content="Riponi" Canvas.Left="24" Canvas.Top="111" Width="46" Click="btnLasciaOggetto_Click"/>
+                        </Canvas>
+                    </GroupBox>
                 </Canvas>
             </GroupBox>
         </StackPanel>

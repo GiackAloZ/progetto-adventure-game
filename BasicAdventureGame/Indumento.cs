@@ -19,17 +19,5 @@ namespace BasicAdventureGame
             BonusStamina = bSta;
             Tipo = t;
         }
-
-        public string Indossa(Giocatore g)
-        {
-            foreach(Indumento i in g.Inv.Oggetti)
-            {
-                if (i.Tipo == Tipo)
-                    return "Stai gia indossando un indumento di questo tipo!\n";
-            }
-            g.Difesa += BonusDifesa;
-            g.MaxStamina += BonusStamina;
-            return Tipo.ToString() + " : " + Nome + " equipaggiato!\n";
-        }
     }
 }

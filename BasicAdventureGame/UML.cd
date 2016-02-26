@@ -32,7 +32,7 @@
   <Class Name="BasicAdventureGame.GestoreMappa">
     <Position X="2.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AIShACABAgAAIAAAAAIAAABABkAADQAAAAEgCCAAAAE=</HashCode>
+      <HashCode>AIShACQBAgAAIAAAIAIAAABABEAALQAAAAEgCCABAAE=</HashCode>
       <FileName>GestoreMappa.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -134,7 +134,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAEAgACA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAgAAAAAAAQAgAAAEAgAAAAAEAgACA=</HashCode>
       <FileName>Giocatore.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -161,7 +161,7 @@
   <Class Name="BasicAdventureGame.Arma">
     <Position X="22.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA=</HashCode>
       <FileName>Arma.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -171,7 +171,7 @@
   <Class Name="BasicAdventureGame.Indumento">
     <Position X="23.75" Y="4.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAABAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Indumento.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

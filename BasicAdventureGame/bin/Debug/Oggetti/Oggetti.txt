@@ -1,2 +1,3 @@
 ﻿0, Pozione, Una pozione curativa
 1, Ciccio, E' un ciccio
+2, Spada del sole, La spade più potente del pianeta, arma, 5, unamano

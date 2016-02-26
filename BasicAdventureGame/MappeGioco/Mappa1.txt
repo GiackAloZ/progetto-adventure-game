@@ -23,7 +23,8 @@ Persona:Senza-tetto,C'è un senza-tetto che è seduto ai bordi della strada,30,2
 		c'è il villaggio da cui sei partito, true, 0
 		null
 		null
-4, IIo miglio strada principale, 1
+4, IIo miglio strada principale, 2
+Oggetto:2
 Open:0-3
 		torni indietro, true, 2
 		null
