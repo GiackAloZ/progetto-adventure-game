@@ -27,12 +27,20 @@ namespace BasicAdventureGame
 		/// <returns>Messaggio da stampare nel log</returns>
 		abstract public string Esegui(GestoreMappa m);
 
+		/// <summary>
+		/// Costruttore di default
+		/// </summary>
         public Azione()
         {
             Nome = "";
             Descrizione = "";
         }
 
+		/// <summary>
+		/// Costruttore con nome e descrizione
+		/// </summary>
+		/// <param name="n"><Nome azione/param>
+		/// <param name="d">Descrizione azione</param>
         public Azione(string n, string d)
         {
             Nome = n;
