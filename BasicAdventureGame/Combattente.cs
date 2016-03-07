@@ -25,5 +25,13 @@ namespace BasicAdventureGame
 			Precisione = p;
 			Livello = l;
 		}
+
+		public bool Danneggia(int dmg)
+		{
+			Salute -= dmg;
+			if (Salute <= 0)
+				return false;
+			return true;
+		}
 	}
 }

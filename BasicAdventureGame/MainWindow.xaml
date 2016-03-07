@@ -179,9 +179,8 @@
                 <Canvas>
                     <Label Content="Avversario:" Canvas.Left="4" Canvas.Top="1" Padding="0,5,5,5"/>
                     <ComboBox x:Name="combsdfoBox4" Canvas.Left="4" Canvas.Top="27" Width="171"/>
-                    <Label Content="Mossa:" Canvas.Left="4" Canvas.Top="50" Padding="0,5,5,5"/>
-                    <ComboBox x:Name="comsdfbdfoBox4" Canvas.Left="4" Canvas.Top="76" Width="171"/>
-                    <Button x:Name="btnEsegueAttacco" Content="Esegui" Canvas.Left="44" Canvas.Top="123" Width="98"/>
+                    <Button x:Name="btnCombatti" Content="Combatti" Canvas.Left="36" Canvas.Top="75" Width="98"/>
+                    <Button x:Name="btnFuggi" Content="Fuggi" Canvas.Left="36" Canvas.Top="122" Width="98"/>
                 </Canvas>
             </GroupBox>
             <GroupBox x:Name="grpInventario" Header="Inventario" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
