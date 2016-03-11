@@ -11,6 +11,7 @@ namespace BasicAdventureGame
         Armatura,
         Falda,
         Bracciere,
-        Scarpe
+        Scarpe,
+		Generico
     }
 }

@@ -4,8 +4,9 @@
 		si vede la strada principale, true, 2
 		null
 		vedi dei magazzini, false, 3
-1, Campi coltivati, 2
+1, Campi coltivati, 3
 Oggetto:0
+Oggetto:4
 Persona:Giardiniere,Vedi un giardiniere intento nel suo lavoro quotidiano.,100,1
 		vedi un grande lago, true, 5
 		null
@@ -23,14 +24,18 @@ Persona:Senza-tetto,C'è un senza-tetto che è seduto ai bordi della strada,30,2
 		c'è il villaggio da cui sei partito, true, 0
 		null
 		null
-4, IIo miglio strada principale, 2
+4, IIo miglio strada principale, 3
+Oggetto:7
 Oggetto:2
 Open:0-3
 		torni indietro, true, 2
 		null
 		null
 		null
-5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.,2
+5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.,5
+Oggetto:5
+Oggetto:6
+Oggetto:3
 Oggetto:1
 Persona:Farne,Vedi farne che gioca a MW3,1000000,2
 		null

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BasicAdventureGame"
         mc:Ignorable="d"
-        Title="Avventura grafica di base - Progetto di avvio" Height="678" Width="1321.834" 
+        Title="Avventura grafica di base - Progetto di avvio" Height="676.5" Width="1345.834" 
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Window.InputBindings>
         <!--Definisce la combinazione di tasti di scelta rapida, non essendo predefiniti come per gli altri comandi, 
@@ -53,7 +53,7 @@
                 <Canvas Margin="0">
                     <Label Content="Salute" Canvas.Left="10" Canvas.Top="18" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="18" >
-                        <ProgressBar Name="prgSalute" Height="26" Width="142" Value="50"/>
+                        <ProgressBar Name="prgSalute" Height="26" Width="142" Maximum="0" SmallChange="1"/>
                         <!--
                             La label sovrapposta alla progress bar mostra automaticamente il valore attuale della proprietà Value
                             di quest'ultima grazie al binding (argomento di fine quarta).
@@ -61,35 +61,35 @@
                             non vi è alcun testo usare {}.
                             L'indice serve per i casi di multi-binding.
                         -->
-                        <TextBlock Text="{Binding ElementName=prgSalute, Path=Value, StringFormat={}{0:F1}}" 
+                        <TextBlock Text="{Binding ElementName=prgSalute, Path=Value, StringFormat={}{0}}" 
                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Difesa" Canvas.Left="10" Canvas.Top="68" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="68" >
-                        <ProgressBar Name="prgDifesa" Height="26" Width="142" Value="50"/>
-                        <TextBlock Text="{Binding ElementName=prgDifesa, Path=Value, StringFormat={}{0:F1}}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <ProgressBar Name="prgDifesa" Height="26" Width="142" Maximum="0" SmallChange="1"/>
+                        <TextBlock Text="{Binding ElementName=prgDifesa, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Attacco" Canvas.Left="10" Canvas.Top="118" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="118" >
-                        <ProgressBar Name="prgAttacco" Height="26" Width="142" Value="50"/>
-                        <TextBlock Text="{Binding ElementName=prgAttacco, Path=Value, StringFormat={}{0:F1}}" HorizontalAlignment="Center" 
+                        <ProgressBar Name="prgAttacco" Height="26" Width="142" Maximum="0" SmallChange="1"/>
+                        <TextBlock Text="{Binding ElementName=prgAttacco, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Precisione" Canvas.Left="10" Canvas.Top="168" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="168" >
-                        <ProgressBar Name="prgPrecisione" Height="26" Width="142" Value="50"/>
-                        <TextBlock Text="{Binding ElementName=prgPrecisione, Path=Value, StringFormat={}{0:F1}}" HorizontalAlignment="Center" 
+                        <ProgressBar Name="prgPrecisione" Height="26" Width="142" Maximum="0" SmallChange="1"/>
+                        <TextBlock Text="{Binding ElementName=prgPrecisione, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Stamina" Canvas.Left="10" Canvas.Top="218" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="218" >
-                        <ProgressBar Name="prgStamina" Height="26" Width="142" Value="50"/>
-                        <TextBlock Text="{Binding ElementName=prgStamina, Path=Value, StringFormat={}{0:F1}}" HorizontalAlignment="Center" 
+                        <ProgressBar Name="prgStamina" Height="26" Width="142" Maximum="0" SmallChange="1"/>
+                        <TextBlock Text="{Binding ElementName=prgStamina, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Esperienza" Canvas.Left="10" Canvas.Top="268" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="268" >
-                        <ProgressBar Name="prgEsperienza" Height="26" Width="142" Value="10">
+                        <ProgressBar Name="prgEsperienza" Height="26" Width="142" Maximum="0" SmallChange="0">
                             <ProgressBar.Foreground>
                                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -110,7 +110,7 @@
                     </Grid>
                     <Label Content="Livello" Canvas.Left="10" Canvas.Top="318" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="318" >
-                        <ProgressBar Name="prgLivello" Height="26" Width="142" Value="1" Minimum="0" Maximum="50" Foreground="#FFB006B0"/>
+                        <ProgressBar Name="prgLivello" Height="26" Width="142" Value="1" Minimum="0" Foreground="#FFB006B0" SmallChange="1"/>
                         <TextBlock Text="{Binding ElementName=prgLivello, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
@@ -124,9 +124,9 @@
             		VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" />
             </GroupBox>
             <GroupBox x:Name="grpInventario_Copy" Header="Inventario Ambiente" HorizontalAlignment="Stretch" Margin="5,5,5,10" VerticalAlignment="Stretch" 
-            	Width="181" BorderBrush="#FF0A9CF3">
+            	Width="202" BorderBrush="#FF0A9CF3">
                 <Canvas>
-                    <ListBox x:Name="lstInventarioAmbiente" Height="352" Canvas.Left="10" Canvas.Top="10" Width="151" BorderBrush="#FF0A9CF3"/>
+                    <ListBox x:Name="lstInventarioAmbiente" Height="352" Canvas.Left="10" Canvas.Top="10" Width="170" BorderBrush="#FF0A9CF3"/>
                 </Canvas>
             </GroupBox>
         </StackPanel>
@@ -196,20 +196,20 @@
                 </Canvas>
             </GroupBox>
             <GroupBox x:Name="grpInventario_Copy1" Header="Equipaggiamento" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Stretch" 
-            	Width="219" BorderBrush="#FF0A9CF3">
+            	Width="243" BorderBrush="#FF0A9CF3">
                 <Canvas>
                     <GroupBox x:Name="grpArmi" Header="Armi" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                    	Width="100" BorderBrush="#FF0A9CF3" Height="160">
+                    	Width="115" BorderBrush="#FF0A9CF3" Height="160">
                         <Canvas Margin="0,0,-2,-1">
-                            <ListBox x:Name="lstArmi" Height="106" Width="90"/>
-                            <Button x:Name="btnRiponiArma" Content="Riponi" Canvas.Left="22" Canvas.Top="111" Width="46" Click="btnLasciaOggetto_Click"/>
+                            <ListBox x:Name="lstArmi" Height="106" Width="105"/>
+                            <Button x:Name="btnRiponiArma" Content="Riponi" Canvas.Left="31" Canvas.Top="111" Width="46" Click="btnRiponiArma_Click"/>
                         </Canvas>
                     </GroupBox>
                     <GroupBox x:Name="grpIndumenti" Header="Indumenti" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                    	Width="102" BorderBrush="#FF0A9CF3" Height="160" Canvas.Left="105">
+                    	Width="111" BorderBrush="#FF0A9CF3" Height="160" Canvas.Left="120">
                         <Canvas Margin="0,0,0,-1">
-                            <ListBox x:Name="lstIndumenti" Height="106" Width="90"/>
-                            <Button x:Name="btnRiponiIndumento" Content="Riponi" Canvas.Left="24" Canvas.Top="111" Width="46" Click="btnLasciaOggetto_Click"/>
+                            <ListBox x:Name="lstIndumenti" Height="106" Width="99"/>
+                            <Button x:Name="btnRiponiIndumento" Content="Riponi" Canvas.Left="30" Canvas.Top="111" Width="46" Click="btnRiponiIndumento_Click"/>
                         </Canvas>
                     </GroupBox>
                 </Canvas>

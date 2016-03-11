@@ -46,6 +46,8 @@ namespace BasicAdventureGame
             btnParla.IsEnabled = false;
 			mappaPrincipale = new GestoreMappa(Player, null, new Button[] { btnVaVersoNord, btnVaVersoEst, btnVaVersoSud, btnVaVersoOvest }, null, cmbInterlocutore, cmbFrase, btnParla, lstInventarioAmbiente, cmbOggettoCoinvolto, lstInventarioGiocatore, lstArmi, lstIndumenti);
 
+			CheckStats();
+
 			//Caricamento mappa da file
 			mappaPrincipale.CaricaMappa("MappeGioco\\Mappa1.txt");
 
@@ -152,9 +154,42 @@ namespace BasicAdventureGame
 		private void btnEquipaggiaOggetto_Click(object sender, RoutedEventArgs e)
 		{
 			txtEsito.Text += "\n" + mappaPrincipale.Equipaggia((Oggetto)lstInventarioGiocatore.SelectedItem);
+			CheckStats();
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
 
+		private void btnRiponiArma_Click(object sender, RoutedEventArgs e)
+		{
+			txtEsito.Text += "\n" + mappaPrincipale.RiponiArma((Arma)lstArmi.SelectedItem);
+			CheckStats();
+			txtEsito.Focus();
+			txtEsito.CaretIndex = txtEsito.Text.Length;
+		}
+
+		private void btnRiponiIndumento_Click(object sender, RoutedEventArgs e)
+		{
+			txtEsito.Text += "\n" + mappaPrincipale.RiponiIndumento((Indumento)lstIndumenti.SelectedItem);
+			CheckStats();
+			txtEsito.Focus();
+			txtEsito.CaretIndex = txtEsito.Text.Length;
+		}
+
+		private void CheckStats()
+		{
+			prgSalute.Maximum = Player.MaxSalute;
+			prgSalute.Value = Player.Salute;
+			prgDifesa.Maximum = Player.Difesa;
+			prgDifesa.Value = Player.Difesa;
+			prgAttacco.Maximum = Player.Attacco;
+			prgAttacco.Value = Player.Attacco;
+			prgStamina.Maximum = Player.MaxStamina;
+			prgStamina.Value = Player.Stamina;
+			prgPrecisione.Maximum = Player.MaxPrecisione;
+			prgPrecisione.Value = Player.Precisione;
+			prgLivello.Value = Player.Livello;
+			prgEsperienza.Maximum = Player.EsperienzaPassaggioLivello();
+			prgEsperienza.Value = Player.Esperienza;
+		}
     }
 }

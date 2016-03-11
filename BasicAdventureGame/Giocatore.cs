@@ -21,7 +21,13 @@ namespace BasicAdventureGame
 
 		private List<int> _esperienzeSalitaLivello;
 
+		public int Stamina { get; set; }
+
 		public int MaxStamina { get; set; }
+
+		public int MaxSalute { get; set; }
+
+		public int MaxPrecisione { get; set; }
 
 		public int Esperienza { get; set; }
 
@@ -34,6 +40,9 @@ namespace BasicAdventureGame
 		public Giocatore(string n, string d, int s, int dif, int a, int p)
 			: base(n, d, s, dif, a, p, 1)
 		{
+			MaxPrecisione = Precisione;
+			MaxSalute = Salute;
+			Stamina = 100;
 			MaxStamina = 100;
 			Esperienza = 0;
 			_esperienzeSalitaLivello = new List<int>(new int[] { 0, 10, 30, 70, 150 });
@@ -53,10 +62,15 @@ namespace BasicAdventureGame
             return false;
         }
 
+		public int EsperienzaPassaggioLivello()
+		{
+			return _esperienzeSalitaLivello[Livello];
+		}
+
 		public string EquipaggiaArma(Arma a)
 		{
 			int count = 0;
-			foreach (Arma arm in Inv.Oggetti)
+			foreach (Arma arm in ArmiEquipaggiate)
 			{
 				count += (int)arm.Impugnatura;
 			}
@@ -64,26 +78,30 @@ namespace BasicAdventureGame
 			if (count > 100)
 				return "Non hai più spazio per equipaggiare quest'arma!\n";
 			ArmiEquipaggiate.Add(a);
+			Inv.Oggetti.Remove(a);
 			Attacco += a.BonusAttacco;
 			return "Arma : " + a.Nome + " equipaggiato!\n";
 		}
 
 		public string EquipaggiaIndumento(Indumento i)
 		{
-			foreach (Indumento ind in Inv.Oggetti)
+			foreach (Indumento ind in IndumentiEquipaggiati)
 			{
 				if (ind.Tipo == i.Tipo)
 					return "Stai gia indossando un indumento di questo tipo!\n";
 			}
 			IndumentiEquipaggiati.Add(i);
+			Inv.Oggetti.Remove(i);
 			Difesa += i.BonusDifesa;
 			MaxStamina += i.BonusStamina;
-			return i.Tipo.ToString() + " : " + Nome + " equipaggiato!\n";
+			Stamina += i.BonusStamina;
+			return i.Tipo.ToString() + " : " + i.Nome + " equipaggiato!\n";
 		}
 
 		public string DisequipaggiaArma(Arma a)
 		{
 			ArmiEquipaggiate.Remove(a);
+			Inv.Oggetti.Add(a);
 			Attacco -= a.BonusAttacco;
 			return "Arma : " + a.Nome + " disequipaggiata!\n";
 		}
@@ -91,9 +109,16 @@ namespace BasicAdventureGame
 		public string DisequipaggiaIndumento(Indumento i)
 		{
 			IndumentiEquipaggiati.Remove(i);
+			Inv.Oggetti.Add(i);
 			Difesa -= i.BonusDifesa;
 			MaxStamina -= i.BonusStamina;
-			return i.Tipo.ToString() + " : " + Nome + " disequipaggiato!\n";
+			Stamina -= i.BonusStamina;
+			return i.Tipo.ToString() + " : " + i.Nome + " disequipaggiato!\n";
+		}
+
+		public Inventario RitornaInventario()
+		{
+			return Inv;
 		}
 
 		public string Combatti(Combattente c, out int result)

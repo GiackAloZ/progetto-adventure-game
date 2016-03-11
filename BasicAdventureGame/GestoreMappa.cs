@@ -351,6 +351,22 @@ namespace BasicAdventureGame
 															imp = Impugnature.Nessuna;
 														Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Arma(infoOggetto[1].Trim(), infoOggetto[2].Trim(), int.Parse(infoOggetto[4].Trim()), imp));
 													}
+													else if (infoOggetto[3].Trim() == "indumento")
+													{
+														TipoIndumento t;
+														int bonusDef = int.Parse(infoOggetto[4].Trim());
+														int bonusStam = int.Parse(infoOggetto[5].Trim());
+														switch (infoOggetto[6].Trim())
+														{
+															case "elmo": t = TipoIndumento.Elmo; break;
+															case "armatura": t = TipoIndumento.Armatura; break;
+															case "falda": t = TipoIndumento.Falda; break;
+															case "bracciere": t = TipoIndumento.Bracciere; break;
+															case "scarpe": t = TipoIndumento.Scarpe; break;
+															default: t = TipoIndumento.Generico; break;
+														}
+														Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Indumento(infoOggetto[1].Trim(), infoOggetto[2].Trim(), bonusDef, bonusStam, t));
+													}
 												}
 											}
 										}
@@ -497,33 +513,34 @@ namespace BasicAdventureGame
 
 		private string CaricaInventarioAmbiente()
 		{
+			_invAmbiente.Items.Clear();
+			_oggettiCoinvolti.Items.Clear();
 			string s = "Per terra trovi : \n";
-			foreach (Oggetto ogg in Mappa[IndiceStanza].Inv.Oggetti)
+			foreach (Oggetto obj in Mappa[IndiceStanza].Inv.Oggetti)
 			{
-				s += "\t" + ogg.Nome + "\n";
-				_invAmbiente.Items.Add(ogg);
-				_oggettiCoinvolti.Items.Add(ogg);
+				s += "\t" + obj.Nome + "\n";
+				_invAmbiente.Items.Add(obj);
+				_oggettiCoinvolti.Items.Add(obj);
 			}
 			return s;
 		}
 
 		private void CaricaInventarioGiocatore()
 		{
-			foreach (Oggetto ogg in _giocatore.Inv.Oggetti)
+			_invGiocatore.Items.Clear();
+			Inventario i = _giocatore.RitornaInventario();
+			foreach (Oggetto obj in i.Oggetti)
 			{
-				_invGiocatore.Items.Add(ogg);
+				_invGiocatore.Items.Add(obj);
 			}
 		}
 
-		public string PrendiOggetto(Oggetto ogg)
+		public string PrendiOggetto(Oggetto obj)
 		{
 			if (_oggettiCoinvolti.SelectedIndex != -1)
 			{
-				string s = _giocatore.Inv.Prendi(ogg, Mappa[IndiceStanza].Inv);
-				_invGiocatore.Items.Clear();
+				string s = _giocatore.Inv.Prendi(obj, Mappa[IndiceStanza].Inv);
 				CaricaInventarioGiocatore();
-				_invAmbiente.Items.Clear();
-				_oggettiCoinvolti.Items.Clear();
 				CaricaInventarioAmbiente();
 				return s;
 			}
@@ -531,14 +548,12 @@ namespace BasicAdventureGame
 				return "Nessun oggetto selezionato!\n";
 		}
 
-		public string LasciaOggetto(Oggetto ogg)
+		public string LasciaOggetto(Oggetto obj)
 		{
 			if (_invGiocatore.SelectedIndex != -1)
 			{
-				string s = _giocatore.Inv.Lascia(ogg, Mappa[IndiceStanza].Inv);
-				_invGiocatore.Items.Clear();
+				string s = _giocatore.Inv.Lascia(obj, Mappa[IndiceStanza].Inv);
 				CaricaInventarioGiocatore();
-				_invAmbiente.Items.Clear();
 				CaricaInventarioAmbiente();
 				return s;
 			}
@@ -546,14 +561,12 @@ namespace BasicAdventureGame
 				return "Nessun oggetto selezionato!\n";
 		}
 
-		public string EliminaOggetto(Oggetto ogg)
+		public string EliminaOggetto(Oggetto obj)
 		{
 			if (_invGiocatore.SelectedIndex != -1)
 			{
-				string s = _giocatore.Inv.Elimina(ogg);
-				_invGiocatore.Items.Clear();
+				string s = _giocatore.Inv.Elimina(obj);
 				CaricaInventarioGiocatore();
-				_invAmbiente.Items.Clear();
 				CaricaInventarioAmbiente();
 				return s;
 			}
@@ -561,24 +574,26 @@ namespace BasicAdventureGame
 				return "Nessun oggetto selezionato!\n";
 		}
 
-        public string Equipaggia(Oggetto ogg)
+        public string Equipaggia(Oggetto obj)
         {
 			string s = "";
-			if (ogg is Arma)
+			if (obj is Arma)
 			{
-				Arma a = (Arma)ogg;
+				Arma a = (Arma)obj;
 				s = _giocatore.EquipaggiaArma(a);
 				CaricaArmi();
+				CaricaInventarioGiocatore();
 			}
-			else if(ogg is Indumento)
+			else if(obj is Indumento)
 			{
-				Indumento i = (Indumento)ogg;
+				Indumento i = (Indumento)obj;
 				s = _giocatore.EquipaggiaIndumento(i);
 				CaricaIndumenti();
+				CaricaInventarioGiocatore();
 			}
 			else
 			{
-				if (ogg != null)
+				if (obj != null)
 					return "Oggetto selezionato non equipaggiabile!\n";
 				else
 					return "Nessun oggetto selezionato!\n";
@@ -602,6 +617,32 @@ namespace BasicAdventureGame
 			{
 				_indumenti.Items.Add(a);
 			}
+		}
+
+		public string RiponiArma(Arma a)
+		{
+			if (a != null)
+			{
+				string s = _giocatore.DisequipaggiaArma(a);
+				CaricaArmi();
+				CaricaInventarioGiocatore();
+				return s;
+			}
+			else
+				return "Nessuna arma selezionata!\n";
+		}
+
+		internal string RiponiIndumento(Indumento i)
+		{
+			if (i != null)
+			{
+				string s = _giocatore.DisequipaggiaIndumento(i);
+				CaricaIndumenti();
+				CaricaInventarioGiocatore();
+				return s;
+			}
+			else
+				return "Nessun indumento selezionato!\n";
 		}
 	}
 }

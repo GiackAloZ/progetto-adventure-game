@@ -1,3 +1,8 @@
 ﻿0, Pozione, Una pozione curativa
 1, Ciccio, E' un ciccio
 2, Spada del sole, La spade più potente del pianeta, arma, 5, unamano
+3, Stocco, Stocchettino, arma, 2, unamano
+4, Martello, Martelletto, arma, 4, duemani
+5, Daga, Daghetta, arma, 1, nessuna
+6, Elmo di ferro, Un elmo figo, indumento, 5, -1, elmo
+7, Armatura di ferro, Armatura schifosa, indumento, 10, -3, armatura

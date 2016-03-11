@@ -32,7 +32,7 @@
   <Class Name="BasicAdventureGame.GestoreMappa">
     <Position X="2.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AIShACQBAgAAIAAAIAIAAABABEAALQAAAAEgCCABAAE=</HashCode>
+      <HashCode>AIShACQBAgEAIAAAIAIAAABABEAALQgAAAEgCCABAAE=</HashCode>
       <FileName>GestoreMappa.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -109,7 +109,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <HashCode>AAADAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
       <FileName>Combattente.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -124,17 +124,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BasicAdventureGame.Giocatore">
-    <Position X="14.75" Y="10.5" Width="3.75" />
-    <InheritanceLine Type="BasicAdventureGame.Combattente" FixedToPoint="true">
-      <Path>
-        <Point X="20.25" Y="9.954" />
-        <Point X="20.25" Y="10.125" />
-        <Point X="16.75" Y="10.125" />
-        <Point X="16.75" Y="10.5" />
-      </Path>
-    </InheritanceLine>
+    <Position X="14.75" Y="10.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAgAAAAAAAQAgAAAEAgAAAAAEAgACA=</HashCode>
+      <HashCode>CAAABAQAAACAAAQhAAAAAQAQAgQAAEAgAAAAAEAgACA=</HashCode>
       <FileName>Giocatore.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -169,7 +161,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BasicAdventureGame.Indumento">
-    <Position X="23.75" Y="4.25" Width="2.75" />
+    <Position X="23.75" Y="4.25" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Indumento.cs</FileName>
@@ -193,9 +185,9 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="BasicAdventureGame.TipoIndumento">
-    <Position X="27.75" Y="4" Width="1.5" />
+    <Position X="29.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAwAEAAIAAAA=</HashCode>
+      <HashCode>AAAAABAAIAAAAAAAAAAAAAAAAAAAAAAAAwAEAAIAAAA=</HashCode>
       <FileName>TipoIndumento.cs</FileName>
     </TypeIdentifier>
   </Enum>
