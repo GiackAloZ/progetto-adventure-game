@@ -46,6 +46,8 @@ namespace BasicAdventureGame
 
         private int _profonditàScelta;
 
+		private bool _inCombattimento = false;
+
         private string _interlocutoreAttuale = "";
 
 		/// <summary>
@@ -632,7 +634,7 @@ namespace BasicAdventureGame
 				return "Nessuna arma selezionata!\n";
 		}
 
-		internal string RiponiIndumento(Indumento i)
+		public string RiponiIndumento(Indumento i)
 		{
 			if (i != null)
 			{
@@ -643,6 +645,24 @@ namespace BasicAdventureGame
 			}
 			else
 				return "Nessun indumento selezionato!\n";
+		}
+
+		public string Combattimento(Combattente c)
+		{
+			int res;
+			string s = _giocatore.Combatti(c, out res);
+			if (res == 1)
+				_inCombattimento = true;
+			else if (res == 0)
+				_inCombattimento = false;
+			else
+				FineAvventura();
+			return s;
+		}
+
+		private void FineAvventura()
+		{
+			MessageBox.Show("La tua avventura finisce qui!");
 		}
 	}
 }
