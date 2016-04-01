@@ -24,9 +24,13 @@ Persona:Senza-tetto,C'è un senza-tetto che è seduto ai bordi della strada,30,2
 		c'è il villaggio da cui sei partito, true, 0
 		null
 		null
-4, IIo miglio strada principale, 3
+4, IIo miglio strada principale, 4
 Oggetto:7
 Oggetto:2
+Nemico:Samurai, Un samurai vestito di tutto punto vuole combattere!, 100, 20, 30, 70, 1, 200, 3
+---Oggetto:4, 100
+---Oggetto:2, 20
+---Oggetto:5, 50
 Open:0-3
 		torni indietro, true, 2
 		null

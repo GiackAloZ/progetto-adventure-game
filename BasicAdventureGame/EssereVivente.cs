@@ -19,5 +19,10 @@ namespace BasicAdventureGame
         {
             Salute = s;
         }
+
+		public override string ToString()
+		{
+			return Nome;
+		}
     }
 }

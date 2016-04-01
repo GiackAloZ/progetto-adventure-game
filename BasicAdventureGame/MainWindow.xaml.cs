@@ -44,7 +44,7 @@ namespace BasicAdventureGame
         {
 			//Creazione gestore mappa con i bottoni che gestiranno le direzioni
             btnParla.IsEnabled = false;
-			mappaPrincipale = new GestoreMappa(Player, null, new Button[] { btnVaVersoNord, btnVaVersoEst, btnVaVersoSud, btnVaVersoOvest }, null, cmbInterlocutore, cmbFrase, btnParla, lstInventarioAmbiente, cmbOggettoCoinvolto, lstInventarioGiocatore, lstArmi, lstIndumenti);
+			mappaPrincipale = new GestoreMappa(Player, null, new Button[] { btnVaVersoNord, btnVaVersoEst, btnVaVersoSud, btnVaVersoOvest }, null, cmbInterlocutore, cmbFrase, btnParla, lstInventarioAmbiente, cmbOggettoCoinvolto, lstInventarioGiocatore, lstArmi, lstIndumenti, btnCombatti, btnFuggi, cmbAvversari);
 
 			CheckStats();
 
@@ -190,6 +190,14 @@ namespace BasicAdventureGame
 			prgLivello.Value = Player.Livello;
 			prgEsperienza.Maximum = Player.EsperienzaPassaggioLivello();
 			prgEsperienza.Value = Player.Esperienza;
+		}
+
+		private void btnCombatti_Click(object sender, RoutedEventArgs e)
+		{
+			txtEsito.Text += "\n" + mappaPrincipale.Combattimento((Nemico)cmbAvversari.SelectedItem);
+			CheckStats();
+			txtEsito.Focus();
+			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
     }
 }

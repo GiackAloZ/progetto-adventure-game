@@ -109,7 +109,7 @@ namespace BasicAdventureGame
 			return Inv;
 		}
 
-		public string Combatti(Combattente c, out int result)
+		public string Combatti(Nemico c, out int result)
 		{
 			Random r = new Random();
 			int rand = r.Next(85, 101);

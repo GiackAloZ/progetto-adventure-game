@@ -26,6 +26,12 @@ namespace BasicAdventureGame
 		/// </summary>
 		private Button[] _pulsantiSpostamento;
 
+		private Button _combatti;
+
+		private Button _fuggi;
+
+		private ComboBox _avversariCoinvolti;
+
 		private Giocatore _giocatore;
 
 		private ListBox _invGiocatore;
@@ -65,7 +71,7 @@ namespace BasicAdventureGame
 		/// </summary>
 		/// <param name="m">Vettore di Ambiente</param>
 		/// <param name="cs">Vettore di Button</param>
-		public GestoreMappa(Giocatore g, Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p, ListBox a, ComboBox oggs, ListBox ig, ListBox ar, ListBox ind)
+		public GestoreMappa(Giocatore g, Ambiente[] m, Button[] cs, Azione[] az, ComboBox i, ComboBox f, Button p, ListBox a, ComboBox oggs, ListBox ig, ListBox ar, ListBox ind, Button comb, Button fugg, ComboBox avv)
 		{
 			if (m != null)
 				Mappa = (Ambiente[])m.Clone();
@@ -83,6 +89,9 @@ namespace BasicAdventureGame
 			_indumenti = ind;
 			_oggettiCoinvolti = oggs;
 			_profonditàScelta = -1;
+			_combatti = comb;
+			_fuggi = fugg;
+			_avversariCoinvolti = avv;
 		}
 
 		/// <summary>
@@ -94,6 +103,9 @@ namespace BasicAdventureGame
 		{
 			//All'avvio viene inizializzata la mappa partendo dall'ambiente con indice 0
 			//Il codice è simile a quello per le altre direzioni, quindi si consiglia di guardare subito sotto se si hanno dubbi
+			if (_inCombattimento)
+				return "Sei in combattimento! Non puoi spostarti!\n";
+
 			if (comando == Direzioni.Avvio)
 			{
 				IndiceStanza = 0;
@@ -170,6 +182,14 @@ namespace BasicAdventureGame
                             checkDialogs = true;
                         }
                     }
+					if (ent is Nemico)
+					{
+						Nemico n = (Nemico)ent;
+						st += n.Descrizione + "\n";
+						_avversariCoinvolti.Items.Add(n);
+						_combatti.IsEnabled = true;
+						_fuggi.IsEnabled = false;
+					}
                 }
                 _parla.IsEnabled = checkDialogs;
             }
@@ -327,61 +347,37 @@ namespace BasicAdventureGame
                                         Mappa[int.Parse(st[0].Trim())].Cose.Add(new Persona(nome, descrizione, vita, dial));
                                         break;
                                     case "Oggetto":
-										string numOgg = effettoCosa;
-										try
+										Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(ReadOggetto(effettoCosa));
+                                        break;
+									case "Nemico":
+										infos = effettoCosa.Split(',');
+										nome = infos[0].Trim();
+										descrizione = infos[1].Trim();
+										vita = int.Parse(infos[2].Trim());
+										int difesa = int.Parse(infos[3].Trim());
+										int attacco = int.Parse(infos[4].Trim());
+										int precisione = int.Parse(infos[5].Trim());
+										int livello = int.Parse(infos[6].Trim());
+										int dropExp = int.Parse(infos[7].Trim());
+										Oggetto[] drops = new Oggetto[int.Parse(infos[8].Trim())];
+										int[] dropsP = new int[int.Parse(infos[8].Trim())];
+										for (int k = 0; k < int.Parse(infos[8].Trim()); k++)
 										{
-											using (StreamReader sr2 = new StreamReader("Oggetti\\Oggetti.txt"))
+											string s = sr.ReadLine();
+											s = s.Substring(3);
+											string[] inf = s.Split(':');
+											switch (inf[0])
 											{
-												string s = sr2.ReadLine();
-												while (s.Split(',')[0] != numOgg)
-												{
-													s = sr2.ReadLine();
-												}
-												string[] infoOggetto = s.Split(',');
-												if(infoOggetto.Length == 3)
-													Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Oggetto(infoOggetto[1].Trim(), infoOggetto[2].Trim()));
-												else if (infoOggetto.Length > 3)
-												{
-													if(infoOggetto[3].Trim() == "arma")
-													{
-														Impugnature imp;
-														if(infoOggetto[5].Trim() == "unamano")
-															imp = Impugnature.UnaMano;
-														else if(infoOggetto[5].Trim() == "duemani")
-															imp = Impugnature.DueMani;
-														else
-															imp = Impugnature.Nessuna;
-														Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Arma(infoOggetto[1].Trim(), infoOggetto[2].Trim(), int.Parse(infoOggetto[4].Trim()), imp));
-													}
-													else if (infoOggetto[3].Trim() == "indumento")
-													{
-														TipoIndumento t;
-														int bonusDef = int.Parse(infoOggetto[4].Trim());
-														int bonusStam = int.Parse(infoOggetto[5].Trim());
-														switch (infoOggetto[6].Trim())
-														{
-															case "elmo": t = TipoIndumento.Elmo; break;
-															case "armatura": t = TipoIndumento.Armatura; break;
-															case "falda": t = TipoIndumento.Falda; break;
-															case "bracciere": t = TipoIndumento.Bracciere; break;
-															case "scarpe": t = TipoIndumento.Scarpe; break;
-															default: t = TipoIndumento.Generico; break;
-														}
-														Mappa[int.Parse(st[0].Trim())].Inv.Aggiungi(new Indumento(infoOggetto[1].Trim(), infoOggetto[2].Trim(), bonusDef, bonusStam, t));
-													}
-												}
+												case "Oggetto":
+													drops[k] = ReadOggetto(inf[1].Split(',')[0].Trim());
+													dropsP[k] = int.Parse(inf[1].Split(',')[1].Trim());
+													break;
+												default:
+													break;
 											}
 										}
-										catch (IOException ex)
-										{
-											MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
-										}
-										catch (Exception ex)
-										{
-											MessageBox.Show("Eccezione non gestita : " + ex.Message);
-										}
-
-                                        break;
+										Mappa[int.Parse(st[0].Trim())].Cose.Add(new Nemico(nome, descrizione, vita, difesa, attacco, precisione, livello, dropExp, drops, dropsP));
+										break;
                                     default:
                                         throw new NotImplementedException();   
                                 }
@@ -647,14 +643,32 @@ namespace BasicAdventureGame
 				return "Nessun indumento selezionato!\n";
 		}
 
-		public string Combattimento(Combattente c)
+		public string Combattimento(Nemico n)
 		{
 			int res;
-			string s = _giocatore.Combatti(c, out res);
+			string s = _giocatore.Combatti(n, out res);
 			if (res == 1)
+			{
 				_inCombattimento = true;
+				_combatti.IsEnabled = true;
+				_fuggi.IsEnabled = true;
+
+			}
 			else if (res == 0)
+			{
 				_inCombattimento = false;
+				foreach (Oggetto o in n.Drop())
+				{
+					_giocatore.Inv.Aggiungi(o);
+					s += "Hai ottenuto " + o + " dal nemico " + n + "\n";
+				}
+				CaricaInventarioGiocatore();
+				Mappa[IndiceStanza].Cose.Remove(n);
+				_avversariCoinvolti.Items.Remove(n);
+				if (_avversariCoinvolti.Items.Count == 0)
+					_combatti.IsEnabled = false;
+				_fuggi.IsEnabled = false;
+			}
 			else
 				FineAvventura();
 			return s;
@@ -663,6 +677,64 @@ namespace BasicAdventureGame
 		private void FineAvventura()
 		{
 			MessageBox.Show("La tua avventura finisce qui!");
+		}
+
+		private Oggetto ReadOggetto(string n)
+		{
+			string numOgg = n;
+			try
+			{
+				using (StreamReader sr2 = new StreamReader("Oggetti\\Oggetti.txt"))
+				{
+					string s = sr2.ReadLine();
+					while (s.Split(',')[0] != numOgg)
+					{
+						s = sr2.ReadLine();
+					}
+					string[] infoOggetto = s.Split(',');
+					if (infoOggetto.Length == 3)
+						return new Oggetto(infoOggetto[1].Trim(), infoOggetto[2].Trim());
+					else if (infoOggetto.Length > 3)
+					{
+						if (infoOggetto[3].Trim() == "arma")
+						{
+							Impugnature imp;
+							if (infoOggetto[5].Trim() == "unamano")
+								imp = Impugnature.UnaMano;
+							else if (infoOggetto[5].Trim() == "duemani")
+								imp = Impugnature.DueMani;
+							else
+								imp = Impugnature.Nessuna;
+							return new Arma(infoOggetto[1].Trim(), infoOggetto[2].Trim(), int.Parse(infoOggetto[4].Trim()), imp);
+						}
+						else if (infoOggetto[3].Trim() == "indumento")
+						{
+							TipoIndumento t;
+							int bonusDef = int.Parse(infoOggetto[4].Trim());
+							int bonusStam = int.Parse(infoOggetto[5].Trim());
+							switch (infoOggetto[6].Trim())
+							{
+								case "elmo": t = TipoIndumento.Elmo; break;
+								case "armatura": t = TipoIndumento.Armatura; break;
+								case "falda": t = TipoIndumento.Falda; break;
+								case "bracciere": t = TipoIndumento.Bracciere; break;
+								case "scarpe": t = TipoIndumento.Scarpe; break;
+								default: t = TipoIndumento.Generico; break;
+							}
+							return new Indumento(infoOggetto[1].Trim(), infoOggetto[2].Trim(), bonusDef, bonusStam, t);
+						}
+					}
+				}
+			}
+			catch (IOException ex)
+			{
+				MessageBox.Show("Eccezione in fase di carimento file : " + ex.Message);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Eccezione non gestita : " + ex.Message);
+			}
+			return null;
 		}
 	}
 }

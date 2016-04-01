@@ -32,7 +32,7 @@
   <Class Name="BasicAdventureGame.GestoreMappa">
     <Position X="2.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AIShACQBAgEAIAAAIAIAAABABEAALQgAAAEgCCABAAE=</HashCode>
+      <HashCode>AIShAiQBAgEAIAAAICYAAARABEAALQhAAAFgCCABAAE=</HashCode>
       <FileName>GestoreMappa.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -92,7 +92,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAEAAAA=</HashCode>
       <FileName>EssereVivente.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -100,8 +100,8 @@
     <Position X="18.5" Y="7.5" Width="3.5" />
     <InheritanceLine Type="BasicAdventureGame.EssereVivente" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.25" Y="10" />
-        <Point X="14.519" Y="10" />
+        <Point X="12.25" Y="10.043" />
+        <Point X="14.519" Y="10.043" />
         <Point X="14.519" Y="9" />
         <Point X="15.542" Y="9" Type="JumpStart" />
         <Point X="15.708" Y="9" Type="JumpEnd" />
@@ -126,7 +126,7 @@
   <Class Name="BasicAdventureGame.Giocatore">
     <Position X="14.75" Y="10.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>CAAABAQAAACAAAQhAAAAAQAQAgQAAEAgAAAAAEAgACA=</HashCode>
+      <HashCode>CAAABAQAAACAAAQhAAAAAQAQAgAAAEAgAAAAAEAgACA=</HashCode>
       <FileName>Giocatore.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

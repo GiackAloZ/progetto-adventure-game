@@ -178,8 +178,8 @@
                       Width="190" BorderBrush="#FF0A9CF3">
                 <Canvas>
                     <Label Content="Avversario:" Canvas.Left="4" Canvas.Top="1" Padding="0,5,5,5"/>
-                    <ComboBox x:Name="combsdfoBox4" Canvas.Left="4" Canvas.Top="27" Width="171"/>
-                    <Button x:Name="btnCombatti" Content="Combatti" Canvas.Left="36" Canvas.Top="75" Width="98"/>
+                    <ComboBox x:Name="cmbAvversari" Canvas.Left="4" Canvas.Top="27" Width="171"/>
+                    <Button x:Name="btnCombatti" Content="Combatti" Canvas.Left="36" Canvas.Top="75" Width="98" Click="btnCombatti_Click"/>
                     <Button x:Name="btnFuggi" Content="Fuggi" Canvas.Left="36" Canvas.Top="122" Width="98"/>
                 </Canvas>
             </GroupBox>
