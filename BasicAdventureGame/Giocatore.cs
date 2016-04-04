@@ -42,12 +42,13 @@ namespace BasicAdventureGame
         public bool GuadagnaEsperienza(int exp)
         {
             Esperienza += exp;
-            if(_esperienzeSalitaLivello[Livello] <= Esperienza)
+			bool ok = false;
+            while(_esperienzeSalitaLivello[Livello] <= Esperienza)
             {
-                Livello++;
-                return true;
+				Esperienza -= _esperienzeSalitaLivello[Livello++];
+				ok = true;
             }
-            return false;
+			return ok;
         }
 
 		public int EsperienzaPassaggioLivello()
@@ -148,6 +149,10 @@ namespace BasicAdventureGame
 				{
 					result = 0;
 					res += String.Format("Hai sconfitto {0}!\n", c.Nome);
+					if(GuadagnaEsperienza(c.DropExp))
+						res += String.Format("Hai guadagnato {0} exp e sei salito di livello!\n", c.DropExp);
+					else
+						res += String.Format("Hai guadagnato {0} exp!\n", c.DropExp);
 					return res;
 				}
 			}

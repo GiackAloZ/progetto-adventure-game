@@ -179,14 +179,10 @@ namespace BasicAdventureGame
 		{
 			prgSalute.Maximum = Player.MaxSalute;
 			prgSalute.Value = Player.Salute;
-			prgDifesa.Maximum = Player.Difesa;
-			prgDifesa.Value = Player.Difesa;
-			prgAttacco.Maximum = Player.Attacco;
-			prgAttacco.Value = Player.Attacco;
-			prgStamina.Maximum = Player.MaxStamina;
-			prgStamina.Value = Player.Stamina;
-			prgPrecisione.Maximum = Player.MaxPrecisione;
-			prgPrecisione.Value = Player.Precisione;
+			lblDifesa.Content = Player.Difesa;
+			lblAttacco.Content = Player.Attacco;
+			lblStamina.Content = Player.Stamina;
+			lblPrecisione.Content = Player.MaxPrecisione;
 			prgLivello.Value = Player.Livello;
 			prgEsperienza.Maximum = Player.EsperienzaPassaggioLivello();
 			prgEsperienza.Value = Player.Esperienza;

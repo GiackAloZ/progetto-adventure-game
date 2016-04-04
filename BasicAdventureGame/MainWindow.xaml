@@ -66,24 +66,20 @@
                     </Grid>
                     <Label Content="Difesa" Canvas.Left="10" Canvas.Top="68" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="68" >
-                        <ProgressBar Name="prgDifesa" Height="26" Width="142" Maximum="0" SmallChange="1"/>
                         <TextBlock Text="{Binding ElementName=prgDifesa, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Attacco" Canvas.Left="10" Canvas.Top="118" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="118" >
-                        <ProgressBar Name="prgAttacco" Height="26" Width="142" Maximum="0" SmallChange="1"/>
                         <TextBlock Text="{Binding ElementName=prgAttacco, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Precisione" Canvas.Left="10" Canvas.Top="168" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="168" >
-                        <ProgressBar Name="prgPrecisione" Height="26" Width="142" Maximum="0" SmallChange="1"/>
                         <TextBlock Text="{Binding ElementName=prgPrecisione, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
                     <Label Content="Stamina" Canvas.Left="10" Canvas.Top="218" FontWeight="ExtraBold" Padding="0,5,5.2,5"/>
                     <Grid Canvas.Left="78" Canvas.Top="218" >
-                        <ProgressBar Name="prgStamina" Height="26" Width="142" Maximum="0" SmallChange="1"/>
                         <TextBlock Text="{Binding ElementName=prgStamina, Path=Value, StringFormat={}{0}}" HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" />
                     </Grid>
@@ -116,6 +112,10 @@
                     </Grid>
                     <Button x:Name="btnAumentoLivello" Content="Aumento del Livello" IsEnabled="False" Canvas.Left="38" Canvas.Top="356" 
                             Width="142"/>
+                    <Label x:Name="lblDifesa" Content="" Height="26" Canvas.Left="83" Canvas.Top="68" Width="80"/>
+                    <Label x:Name="lblAttacco" Content="" Height="26" Canvas.Left="83" Canvas.Top="118" Width="80"/>
+                    <Label x:Name="lblPrecisione" Content="" Height="26" Canvas.Left="83" Canvas.Top="168" Width="80"/>
+                    <Label x:Name="lblStamina" Content="" Height="26" Canvas.Left="83" Canvas.Top="218" Width="80"/>
                 </Canvas>
             </GroupBox>
             <GroupBox x:Name="grpLog" Header="Log" HorizontalAlignment="Center" Margin="5,5,5,1" 
