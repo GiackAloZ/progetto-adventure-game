@@ -55,7 +55,7 @@ namespace BasicAdventureGame
             // * Avvia la prima stanza.     *
             // ******************************
             //CambiaAmbiente(0);
-            txtEsito.Text = mappaPrincipale.CambiaAmbiente(Direzioni.Avvio);
+            txtEsito.Text += mappaPrincipale.CambiaAmbiente(Direzioni.Avvio);
         }
 
         private void New_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -92,35 +92,35 @@ namespace BasicAdventureGame
 
         private void btnVaVersoNord_Click(object sender, RoutedEventArgs e)
         {
-            txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Nord);
+            txtEsito.AppendText("\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Nord));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
         }
 
         private void btnVaVersoEst_Click(object sender, RoutedEventArgs e)
         {
-			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Est);
+			txtEsito.AppendText("\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Est));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
         }
 
         private void btnVaVersoSud_Click(object sender, RoutedEventArgs e)
         {
-			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Sud);
+			txtEsito.AppendText("\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Sud));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
         }
 
         private void btnVaVersoOvest_Click(object sender, RoutedEventArgs e)
         {
-			txtEsito.Text += "\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Ovest);
+			txtEsito.AppendText("\n" + mappaPrincipale.CambiaAmbiente(Direzioni.Ovest));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
         }
 
         private void btnParla_Click(object sender, RoutedEventArgs e)
         {
-            txtEsito.Text += "\n" + mappaPrincipale.Parla();
+            txtEsito.AppendText("\n" + mappaPrincipale.Parla());
             txtEsito.Focus();
             txtEsito.CaretIndex = txtEsito.Text.Length;
         }
@@ -132,28 +132,28 @@ namespace BasicAdventureGame
 
 		private void btnPrende_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.PrendiOggetto((Oggetto)cmbOggettoCoinvolto.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.PrendiOggetto((Oggetto)cmbOggettoCoinvolto.SelectedItem));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
 
 		private void btnLasciaOggetto_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.LasciaOggetto((Oggetto)lstInventarioGiocatore.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.LasciaOggetto((Oggetto)lstInventarioGiocatore.SelectedItem));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
 
 		private void btnEliminaOggetto_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.EliminaOggetto((Oggetto)lstInventarioGiocatore.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.EliminaOggetto((Oggetto)lstInventarioGiocatore.SelectedItem));
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
 		}
 
 		private void btnEquipaggiaOggetto_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.Equipaggia((Oggetto)lstInventarioGiocatore.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.Equipaggia((Oggetto)lstInventarioGiocatore.SelectedItem));
 			CheckStats();
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -161,7 +161,7 @@ namespace BasicAdventureGame
 
 		private void btnRiponiArma_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.RiponiArma((Arma)lstArmi.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.RiponiArma((Arma)lstArmi.SelectedItem));
 			CheckStats();
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -169,7 +169,7 @@ namespace BasicAdventureGame
 
 		private void btnRiponiIndumento_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.RiponiIndumento((Indumento)lstIndumenti.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.RiponiIndumento((Indumento)lstIndumenti.SelectedItem));
 			CheckStats();
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;
@@ -190,7 +190,7 @@ namespace BasicAdventureGame
 
 		private void btnCombatti_Click(object sender, RoutedEventArgs e)
 		{
-			txtEsito.Text += "\n" + mappaPrincipale.Combattimento((Nemico)cmbAvversari.SelectedItem);
+			txtEsito.AppendText("\n" + mappaPrincipale.Combattimento((Nemico)cmbAvversari.SelectedItem));
 			CheckStats();
 			txtEsito.Focus();
 			txtEsito.CaretIndex = txtEsito.Text.Length;

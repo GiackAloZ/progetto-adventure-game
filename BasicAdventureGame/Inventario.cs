@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 
 namespace BasicAdventureGame
 {
-    class Inventario
+    class Inventario : IEnumerable<Oggetto>
     {
         public List<Oggetto> Oggetti { get; set; }
 
@@ -41,5 +42,17 @@ namespace BasicAdventureGame
 			Oggetti.Add(obj);
 			return "Hai preso " + obj.Nome + "\n";
 		}
+
+		public IEnumerator<Oggetto> GetEnumerator()
+		{
+			foreach(Oggetto o in Oggetti)
+				yield return o;
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return this.GetEnumerator();
+		}
+		
     }
 }

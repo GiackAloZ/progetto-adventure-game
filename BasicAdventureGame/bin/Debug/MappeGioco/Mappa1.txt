@@ -1,48 +1,62 @@
 ﻿6
-0, Villaggio
-		ci sono dei campi coltivati, true, 1
-		si vede la strada principale, true, 2
+0, CUCINA,2
+Persona:Zia,Tua zia ti osserva di tanto in tanto sempre con un grande sorriso e l'aria riposata mentre ti prepara la colazione.,100,0
+Persona:Zio,Ti accorgi che tuo zio sembra molto indaffarato e che sta mangiando alquanto velocemente...,100,1
 		null
-		vedi dei magazzini, false, 3
-1, Campi coltivati, 3
+		null
+		vai in CORRIDOIO, true, 1
+		null
+1, Corridoio
+	c'è la cucina,true,0
+	vedi la porta che conduce all'esterno della casa,true,2
+	null
+	vai al piano interrato,true,3
+2, Esterno casa,1
+Persona:Droide PB7,C'è un driode PB7 che ti potrebbe dare qualche informazione,100,2
+	null
+	c'è uno spiazzo con un veicolo da vendita Jawa ed alcuni piccoli Jawa che puliscono i droidi in vendita,false,4
+	null
+	c'è la porta che conduce al corridoio all'interno della casa,true,1
+3, Piano interrato
+	vai al corridoio al piano superiore, true, 1
+	vedi la tua camera, true, 5
+	null
+	null
+4, Veicolo Jawa,1
+Persona:Zio,Tu zio ti aspetta davanti al veicolo e consulta i droidi da comprare,100,3
+	null
+	torni dentro casa,true,1
+	null
+	null
+5, Camera tua,3
 Oggetto:0
-Oggetto:4
-Persona:Giardiniere,Vedi un giardiniere intento nel suo lavoro quotidiano.,100,1
-		vedi un grande lago, true, 5
-		null
-		c'è il villaggio da cui sei partito, true, 0
-		null
-2, Strada Principale, 2
-Persona:Vecchio,Vedi un anziano signore vestito di nero seduto sulla strada principale.,60,0
-Persona:Senza-tetto,C'è un senza-tetto che è seduto ai bordi della strada,30,2
-		null
-		null
-		prosegui per la strada principale, true, 4
-		c'è il villaggio da cui sei partito, true, 0
-3, Magazzini
-		null
-		c'è il villaggio da cui sei partito, true, 0
-		null
-		null
-4, IIo miglio strada principale, 4
-Oggetto:7
-Oggetto:2
-Nemico:Samurai, Un samurai vestito di tutto punto vuole combattere!, 10, 5, 30, 70, 1, 5, 3
----Oggetto:4, 100
----Oggetto:2, 20
----Oggetto:5, 50
-Open:0-3
-		torni indietro, true, 2
-		null
-		null
-		null
-5, Lago\nLa vista di uno splendido lago si apre davanti ai tuoi occhi.,5
-Oggetto:5
-Oggetto:6
-Oggetto:3
 Oggetto:1
-Persona:Farne,Vedi farne che gioca a MW3,1000000,2
-		null
-		null
-		vedi i campi coltivati, true, 1
-		null
+Oggetto:2
+	null
+	null
+	null
+	torni nel pianerottolo del piano interrato,true,3
+6, Officina,2
+Persona:C3PO,100,4
+Persona:R2-D2,100,5
+	null
+	c'è il pianerottolo del piano interrato,true,4
+	null
+	null
+7, Letto,1
+Persona:C3PO,100,6
+	puoi andare fuori dalla casa,false,8
+	null
+	null
+	null
+8, Esterno casa
+	puoi salire sullo Sprinter insieme a C3PO ed andare a Beggar's Canyon,true,9
+	null
+	null
+	null
+9, Entrata Beggar's Canyon,1
+Nemico:Saggaru, E' un essere piccolo e basso ma molto agile, 10, 5, 30, 70, 1, 5, 3
+	null
+	null
+	null
+	null

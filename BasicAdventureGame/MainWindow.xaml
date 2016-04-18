@@ -120,8 +120,8 @@
             </GroupBox>
             <GroupBox x:Name="grpLog" Header="Log" HorizontalAlignment="Center" Margin="5,5,5,1" 
                       VerticalAlignment="Stretch" BorderBrush="#FF0A9CF3" Width="860">
-                <TextBox x:Name="txtEsito" Margin="0,0,-2,1" Text="Sei entrato nell'hangar principale della Morte Nera.&#xA;Sono presenti: R2D2, Han Solo e Darth Vader.&#xA;In fondo vedi una nave pronta al decollo." TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" 
-            		VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" />
+                <TextBox x:Name="txtEsito" Margin="0,0,-2,1" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" 
+            		VerticalScrollBarVisibility="Visible" BorderBrush="#FF0A9CF3" Text="Sei Luke Skywalker, un ragazzo di 18 anni appena compiuti che vive su Tatooine, un pianeta desertico che orbita attorno ad una stella binaria, situata sull'Orlo Esterno della galassia e ad una distanza di circa 43.000 anni luce dal nucleo.&#xD;&#xA;Vivi con i tuoi zii, Owen Lars (zio) e Bern Whitesun (zia), in una zona desertica non molto distante dalla città-aeroporto spaziale Mos Eisley.&#xD;&#xA;Sei una persona spontanea, cordiale e coraggiosa. Non ti manca l'impetuosità tipica dei giovani.&#xD;&#xA;Hai una particolare affinità nel riparare droidi e nel pilotare mezzi di trasporto.&#xD;&#xA;&#xD;&#xA;Ti svegli una mattina qualunque, sdraiato sopra un ammasso di schede elettroniche non funzionanti che stavi cercando di riparare la sera prima.&#xD;&#xA;Ti alzi pensando alla ramanzina che ti aspetterà per non essere riuscito nell'intento.&#xD;&#xA;Scrollandoti le schede di dosso, ti dirigi distrattamente verso la CUCINA.&#xD;&#xA;Apri la porta e all'interno vedi tua zia che ti accoglie con un raggiante sorriso mentre lo zio evita il tuo sguardo, impegnato nel mangiare un sostanzioso piatto di uova strapazzate.&#xD;&#xA;&#xD;&#xA;" />
             </GroupBox>
             <GroupBox x:Name="grpInventario_Copy" Header="Inventario Ambiente" HorizontalAlignment="Stretch" Margin="5,5,5,10" VerticalAlignment="Stretch" 
             	Width="202" BorderBrush="#FF0A9CF3">

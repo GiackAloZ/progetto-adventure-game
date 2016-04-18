@@ -1,20 +1,20 @@
-﻿2
-0, Vecchio, 2
-Sono molto indaffarato nella mia meditazione. Passa oltre!;Non so dove mi trovo aiutami!:1
-Mi dispiace ma non so come aiutarti ragazzo.;Ma dai potrai darmi una mano in qualche modo!
-1, Giardiniere, 7
-Ehlià! Chi sei?;Un viaggiatore disperso:1;Un ricercatore:2;Un minatore:3
-Ah si? E cosa ti ha portato a viaggiare i questo posto desolato?;La gente:4;La natura:6
-Interessante... E di cosa ti occupi?;Biologia:4;Fisica:5
-Sei nel posto giusto! La gente ha proprio bisogno di alcuni lavoratori alla miniera di carbone...
-Bhe non è che siamo così gentili in realtà...
-La gente come te non la capisco...;Vaffanculo
-Sei un vero amante della natura vedo! Come me...
-2, Senza-tetto, 3
-Avrei bisogno di qualche soldo...;Non no ho mi dispiace:1;Per quale motivo?:2
-Non fa niente giovanotto...
-Ho perso la mia famiglia 2 anni fa e da allora non sono riuscito a trovare un lavoro...
-2, Farne, 3
-Sono io!;Anchio sono io:1;Ehi ma sei proprio tu!:2
-Mi sembra giusto
-Si sono proprio io!
+﻿3
+0, Zia, 2
+bla; ciao:1
+ciao
+1, Zio, 1
+bla; perche
+2, Droide PB7, 3
+Cosa desideri padron Luke?; Come interagisco con gli oggetti?:1; Come funzionano gli oggetti equipaggiati?:2; Sono a posto grazie
+Gli oggetti compaiono nella lista a destra quando sono presenti nell'ambiente in cui ti trovi\Puoi interagire con gli oggetti presenti nell'ambiente selezionandoli attraverso il menu a tendina nell'area "Oggetto coinvolto"\Una volta selezionati è possibile compiere una delle azioni presenti nell'area "Oggetto coinvolto" premendo i bottoni corrispondenti all'azione che di intende eseguire; Come funzionano gli oggetti equipaggiati?:2; Sono a posto grazie:3
+Gli oggetti possono essere equipaggiati quando sono nel tuo inventario\Gli oggetti equipaggiabili sono armi o armature che aumentano le tue statistiche\Per equipaggiare un oggetto bisogna selezionarlo e premere il tasto "Equipaggia"\Da notare che non si possono equipaggiare molti oggetti perchè si possono tenere solo fino a due oggetti ad una mano o uno solo a due mani\Per quanto riguarda l'armatura non si possono equipaggiare due oggetti che sorrispondono allo stesso pezzo di armatura; Come interagisco con gli oggetti?:1; Sono a posto grazie:3
+Torna quando vuoi!
+3, Zio, 1
+bla; p
+4, C3PO,2
+Ora sto molto meglio Padron Luke. Prima tutti i bulloni mi tendevano!; Sono contento per te:1
+Grazie!
+5, R2-D2,2
+Bzz....bzzbzz\C3PO: Ti sta chiedendo di potergli levare il bullone di contenimento perchè gli provoca un cortocircuito; Va bene:1; Niente da fare:2
+Bzz.....\C3PO: Cosa dici?! Un video? Una missione? Cosa stai blaterando stupido di un rottame!?\R2-D2 trasmette un video.\Una donna molto bella dice questo:"Aiutami Obi-Wan-Kenobi. Sei la mia ultima speranza"\Nella tua testa pensi che lei sia in difficoltà e che debba esere salvata.\Conosci un certo Ben che vice da eremita a Beggar's Canyon.\Lo comunichi ai droidi e dici che l'indomani sareste partiti per trovarlo
+Bzzzzzzzz!!!!

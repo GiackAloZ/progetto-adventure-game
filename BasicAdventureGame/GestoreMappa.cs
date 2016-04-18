@@ -110,6 +110,73 @@ namespace BasicAdventureGame
 			{
 				IndiceStanza = 0;
 				string s = "Benvenuto nel " + Mappa[IndiceStanza].Descrizione + "\n";
+
+				string st = "";
+
+				//Controllo delle eventuali azioni da applicare
+				for (int i = 0; i < Mappa.Length; i++)
+				{
+					if (Mappa[i].Azioni != null)
+					{
+						for (int j = 0; j < Mappa[i].Azioni.Count; j++)
+						{
+							if (Mappa[i].Azioni[j] != null && Mappa[i].Azioni[j].GetType() == typeof(ApriPassaggio))
+							{
+								if (IndiceStanza == i)
+								{
+									st += Mappa[i].Azioni[j].Esegui(this);
+								}
+							}
+						}
+					}
+				}
+
+				//Controllo delle eventuali entità presenti nell'Ambiente di arrivo
+				if (Mappa[IndiceStanza].Cose.Count != 0)
+				{
+					_interlocutore.Items.Clear();
+					bool checkDialogs = false;
+					foreach (Entità ent in Mappa[IndiceStanza].Cose)
+					{
+						if (ent is Persona)
+						{
+							Persona p = (Persona)ent;
+							st += p.Descrizione + "\n";
+							if (p.Dial != null)
+							{
+								_frase.Items.Clear();
+								_interlocutore.Items.Add(p.Nome);
+								checkDialogs = true;
+							}
+						}
+						if (ent is Nemico)
+						{
+							Nemico n = (Nemico)ent;
+							st += n.Descrizione + "\n";
+							_avversariCoinvolti.Items.Add(n);
+							_combatti.IsEnabled = true;
+							_fuggi.IsEnabled = false;
+						}
+					}
+					_parla.IsEnabled = checkDialogs;
+				}
+				else
+				{
+					_interlocutore.Items.Clear();
+					_frase.Items.Clear();
+					_parla.IsEnabled = false;
+				}
+
+				_invAmbiente.Items.Clear();
+				_oggettiCoinvolti.Items.Clear();
+
+				if (Mappa[IndiceStanza].Inv.Oggetti.Count != 0)
+				{
+					st += CaricaInventarioAmbiente();
+				}
+
+				_interlocutoreAttuale = "";
+				_profonditàScelta = -1;
 				for (int i = 0; i < Mappa[IndiceStanza].Passaggi.Length; i++)
 				{
 					if (Mappa[IndiceStanza].Passaggi[i] != null)
@@ -144,7 +211,7 @@ namespace BasicAdventureGame
 			//Per tutti gli altri comandi che non sono Direzione.Avvio viene eseguita questa parte di codice
 
 			IndiceStanza = Mappa[IndiceStanza].Passaggi[(int)comando].IndiceAmbienteDestinazione;	//Trova l'indice della stanza di arrivo
-			string st = "Sei andato in " + Mappa[IndiceStanza].Descrizione + ".\n";					//Comincia a riempire la stringa st che conterrà tutte le informazioni sullo spostamento
+			string st2 = "Sei andato in " + Mappa[IndiceStanza].Descrizione + ".\n";					//Comincia a riempire la stringa st che conterrà tutte le informazioni sullo spostamento
 
 			//Controllo delle eventuali azioni da applicare
             for (int i = 0; i < Mappa.Length; i++)
@@ -157,7 +224,7 @@ namespace BasicAdventureGame
                         {
                             if (IndiceStanza == i)
                             {
-                                st += Mappa[i].Azioni[j].Esegui(this);
+                                st2 += Mappa[i].Azioni[j].Esegui(this);
                             }
                         }
                     }
@@ -174,7 +241,7 @@ namespace BasicAdventureGame
                     if (ent is Persona)
                     {
                         Persona p = (Persona)ent;
-                        st += p.Descrizione + "\n";
+                        st2 += p.Descrizione + "\n";
                         if (p.Dial != null)
                         {
                             _frase.Items.Clear();
@@ -185,7 +252,7 @@ namespace BasicAdventureGame
 					if (ent is Nemico)
 					{
 						Nemico n = (Nemico)ent;
-						st += n.Descrizione + "\n";
+						st2 += n.Descrizione + "\n";
 						_avversariCoinvolti.Items.Add(n);
 						_combatti.IsEnabled = true;
 						_fuggi.IsEnabled = false;
@@ -205,7 +272,7 @@ namespace BasicAdventureGame
 
 			if (Mappa[IndiceStanza].Inv.Oggetti.Count != 0)
 			{
-				st += CaricaInventarioAmbiente();
+				st2 += CaricaInventarioAmbiente();
 			}
 
             _interlocutoreAttuale = "";
@@ -236,12 +303,12 @@ namespace BasicAdventureGame
 					else
 						_pulsantiSpostamento[i].IsEnabled = true;
 
-					st += "A " + direzione + " " + Mappa[IndiceStanza].Passaggi[i].Titolo + chiuso + ". ";
+					st2 += "A " + direzione + " " + Mappa[IndiceStanza].Passaggi[i].Titolo + chiuso + ". ";
 				}
 				else
 					_pulsantiSpostamento[i].IsEnabled = false;
 			}
-			return st + "\n";
+			return st2 + "\n";
 			
 		}
 
@@ -326,7 +393,7 @@ namespace BasicAdventureGame
                                                             List<Tuple<string,int>> scelte = new List<Tuple<string,int>>();
                                                             for(int l = 1; l < dialogo.Length; l++)
                                                                 scelte.Add(new Tuple<string,int>(dialogo[l].Split(':')[0], dialogo[l].Split(':').Length > 1 ? int.Parse(dialogo[l].Split(':')[1]) : -1));
-                                                            dial.Scelte.Add(new Scelta(dialogo[0], scelte));
+                                                            dial.Scelte.Add(new Scelta(dialogo[0].Replace('\\','\n'), scelte));
                                                         }
                                                     }
                                                 }
@@ -514,7 +581,7 @@ namespace BasicAdventureGame
 			_invAmbiente.Items.Clear();
 			_oggettiCoinvolti.Items.Clear();
 			string s = "Per terra trovi : \n";
-			foreach (Oggetto obj in Mappa[IndiceStanza].Inv.Oggetti)
+			foreach (Oggetto obj in Mappa[IndiceStanza].Inv)
 			{
 				s += "\t" + obj.Nome + "\n";
 				_invAmbiente.Items.Add(obj);
@@ -527,7 +594,7 @@ namespace BasicAdventureGame
 		{
 			_invGiocatore.Items.Clear();
 			Inventario i = _giocatore.RitornaInventario();
-			foreach (Oggetto obj in i.Oggetti)
+			foreach (Oggetto obj in i)
 			{
 				_invGiocatore.Items.Add(obj);
 			}
